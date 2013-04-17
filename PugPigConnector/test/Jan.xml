@@ -1,0 +1,29 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>641c4fc1-41f0-415d-8883-2938709193b3</id>
+  <link rel="self" type="application/atom+xml" href="http://vtuk003:37002/test/Jan.xml" />
+  <title type="text">January 2013</title>
+  <subtitle type="text">This edition has 3 pages</subtitle>
+  <author>
+    <name>Sandeep.Narayan</name>
+  </author>
+  <updated>2013-03-24T22:02:00.0000000</updated>
+  
+  <entry>
+    <id>47615bb9-b735-437d-8763-9ef3110c0cec</id>
+    <link rel="alternate" type="text/html" href="/test/page1.html" />
+    <link rel="related" type="text/cache-manifest" href="page1.manifest" />
+    <title type="text">Jan 2013 - Page 1</title>
+    <summary type="text">Jan 2013 - Page 1 page summary</summary>
+    <updated>2013-03-26T10:01:00.0000000</updated>
+  </entry>
+
+  <entry>
+    <id>47615bb9-b735-437d-8763-9ef3110c0cec</id>
+    <link rel="alternate" type="text/html" href="/test/page2.html" />
+    <link rel="related" type="text/cache-manifest" href="page2.manifest" />
+    <title type="text">Jan 2013 - Page 2</title>
+    <summary type="text">Jan 2013 - Page 2 page summary</summary>
+    <updated>2013-03-26T10:01:00.0000000</updated>
+  </entry>
+  
+</feed>

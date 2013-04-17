@@ -1,0 +1,13 @@
+C:\EPiServer\Sites\PugPigConnector\bin\PugPigConnector.dll
+C:\EPiServer\Sites\PugPigConnector\bin\PugPigConnector.pdb
+C:\EPiServer\Sites\PugPigConnector\bin\EPiServer.BaseLibrary.dll
+C:\EPiServer\Sites\PugPigConnector\bin\EPiServer.Configuration.dll
+C:\EPiServer\Sites\PugPigConnector\bin\EPiServer.Data.dll
+C:\EPiServer\Sites\PugPigConnector\bin\EPiServer.dll
+C:\EPiServer\Sites\PugPigConnector\bin\EPiServer.Framework.dll
+C:\EPiServer\Sites\PugPigConnector\bin\EPiServer.Web.WebControls.dll
+C:\EPiServer\Sites\PugPigConnector\bin\EPiServer.XForms.dll
+C:\EPiServer\Sites\PugPigConnector\bin\log4net.dll
+C:\EPiServer\Sites\PugPigConnector\obj\Release\PugPigConnector.csprojResolveAssemblyReference.cache
+C:\EPiServer\Sites\PugPigConnector\obj\Release\PugPigConnector.dll
+C:\EPiServer\Sites\PugPigConnector\obj\Release\PugPigConnector.pdb

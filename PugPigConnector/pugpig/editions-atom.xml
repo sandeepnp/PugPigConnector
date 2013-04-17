@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:opds="http://opds-spec.org/2010/catalog">
+  <id>tag:demo.pugpig.com,2012-03:templates</id>
+
+  <link rel="self" href="http://demo.pugpig.com/templates/editions.xml" type="application/atom+xml;profile=opds-catalog;kind=acquisition"/>
+
+  <title>Sample Pugpig templates</title>
+  <updated>2012-01-10T10:01:11Z</updated>
+  <author>
+      <name>Kaldor Group</name>
+  </author>
+  <entry>
+    <title>Paned template</title>
+    <id>paned</id>
+    <updated>2012-03-21T11:01:11Z</updated>
+    <dcterms:issued>2012-03-22</dcterms:issued>
+    <author>
+      <name>Pugpig</name>
+    </author>
+    <summary>Paned in both orientations</summary>
+    <link rel="http://opds-spec.org/image" type="image/jpg" href="paned/cover.png"/>
+    <link rel="http://opds-spec.org/acquisition" type="application/atom+xml" href="paned/html/atom.xml" />
+    <link rel="alternate" type="application/atom+xml" href="paned/html/atom.xml"/>
+  </entry> 
+  <entry>
+    <title>Scrolling template</title>
+    <id>scrolling</id>
+    <updated>2012-03-21T11:01:11Z</updated>
+    <dcterms:issued>2012-03-21</dcterms:issued>
+    <author>
+      <name>Pugpig</name>
+    </author>
+    <summary>Scrolling in both orientations</summary>
+    <link rel="http://opds-spec.org/image" type="image/jpg" href="scrolled/cover.png"/>
+    <link rel="http://opds-spec.org/acquisition" type="application/atom+xml" href="scrolled/html/atom.xml" />
+    <link rel="alternate" type="application/atom+xml" href="scrolled/html/atom.xml"/>
+  </entry>  
+  <entry>
+    <title>Mixed template</title>
+    <id>mixed</id>
+    <updated>2012-03-21T11:01:11Z</updated>
+    <dcterms:issued>2012-03-20</dcterms:issued>
+    <author>
+      <name>Pugpig</name>
+    </author>
+    <summary>Paned in landscape, scrolling in portrait</summary>
+    <link rel="http://opds-spec.org/image" type="image/jpg" href="mixed/cover.png"/>
+    <link rel="http://opds-spec.org/acquisition" type="application/atom+xml" href="mixed/html/atom.xml" />
+    <link rel="alternate" type="application/atom+xml" href="mixed/html/atom.xml"/>
+  </entry>  
+
+
+
+</feed>

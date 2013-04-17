@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EPiServer.BaseLibrary.dll">
+      <publishTime>03/06/2013 16:16:49</publishTime>
+    </File>
+    <File Include="bin/EPiServer.Configuration.dll">
+      <publishTime>03/06/2013 16:16:49</publishTime>
+    </File>
+    <File Include="bin/EPiServer.Data.dll">
+      <publishTime>03/06/2013 16:16:01</publishTime>
+    </File>
+    <File Include="bin/EPiServer.dll">
+      <publishTime>03/06/2013 16:16:49</publishTime>
+    </File>
+    <File Include="bin/EPiServer.Framework.dll">
+      <publishTime>03/06/2013 16:16:02</publishTime>
+    </File>
+    <File Include="bin/EPiServer.Web.WebControls.dll">
+      <publishTime>03/06/2013 16:16:50</publishTime>
+    </File>
+    <File Include="bin/EPiServer.XForms.dll">
+      <publishTime>03/06/2013 16:16:50</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>03/06/2013 16:16:50</publishTime>
+    </File>
+    <File Include="bin/PugPigConnector.dll">
+      <publishTime>04/16/2013 14:33:47</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/22/2013 11:06:13</publishTime>
+    </File>
+    <File Include="scripts/tracking.js">
+      <publishTime>04/16/2013 14:25:07</publishTime>
+    </File>
+    <File Include="Views/Blocks/ArticleBlock.ascx">
+      <publishTime>04/11/2013 15:19:45</publishTime>
+    </File>
+    <File Include="Views/Blocks/ArticleListItem2Block.ascx">
+      <publishTime>04/11/2013 17:13:49</publishTime>
+    </File>
+    <File Include="Views/Blocks/ArticleListItemBlock.ascx">
+      <publishTime>04/11/2013 16:36:23</publishTime>
+    </File>
+    <File Include="Views/Blocks/CoverPageArticleBlock.ascx">
+      <publishTime>04/12/2013 10:11:59</publishTime>
+    </File>
+    <File Include="Views/Blocks/CoverPageListArticleBlock.ascx">
+      <publishTime>04/12/2013 11:07:09</publishTime>
+    </File>
+    <File Include="Views/Pages/Article.aspx">
+      <publishTime>04/16/2013 14:32:44</publishTime>
+    </File>
+    <File Include="Views/Pages/ArticleList.aspx">
+      <publishTime>04/16/2013 14:33:02</publishTime>
+    </File>
+    <File Include="Views/Pages/ComplexCover.aspx">
+      <publishTime>04/11/2013 09:37:50</publishTime>
+    </File>
+    <File Include="Views/Pages/Cover.aspx">
+      <publishTime>04/04/2013 14:29:07</publishTime>
+    </File>
+    <File Include="Views/Pages/CoverLatest.aspx">
+      <publishTime>04/16/2013 14:33:28</publishTime>
+    </File>
+    <File Include="Views/Pages/Edition.aspx">
+      <publishTime>03/29/2013 14:14:22</publishTime>
+    </File>
+    <File Include="Views/Pages/EditionContainer.aspx">
+      <publishTime>03/25/2013 13:48:14</publishTime>
+    </File>
+    <File Include="Views/Pages/GenericCover.aspx">
+      <publishTime>04/11/2013 13:43:41</publishTime>
+    </File>
+    <File Include="Views/Pages/GenericRegular.aspx">
+      <publishTime>04/11/2013 14:03:12</publishTime>
+    </File>
+    <File Include="Views/Pages/GenericRegularList.aspx">
+      <publishTime>04/11/2013 13:29:56</publishTime>
+    </File>
+    <File Include="Views/Pages/GenericRegularSmall.aspx">
+      <publishTime>04/10/2013 16:55:08</publishTime>
+    </File>
+    <File Include="Views/Pages/Manifest.ashx">
+      <publishTime>03/27/2013 16:54:35</publishTime>
+    </File>
+    <File Include="Views/Pages/Regular.aspx">
+      <publishTime>04/08/2013 09:41:12</publishTime>
+    </File>
+    <File Include="Views/Pages/RegularA.aspx">
+      <publishTime>04/11/2013 14:50:19</publishTime>
+    </File>
+    <File Include="Views/Pages/RegularB.aspx">
+      <publishTime>04/15/2013 17:29:26</publishTime>
+    </File>
+    <File Include="Views/Pages/RegularC.aspx">
+      <publishTime>04/10/2013 15:59:38</publishTime>
+    </File>
+    <File Include="Views/Pages/RegularD.aspx">
+      <publishTime>04/10/2013 15:59:49</publishTime>
+    </File>
+    <File Include="Views/Pages/RegularE.aspx">
+      <publishTime>04/10/2013 15:59:59</publishTime>
+    </File>
+    <File Include="Views/Pages/RegularListA.aspx">
+      <publishTime>04/10/2013 16:00:43</publishTime>
+    </File>
+    <File Include="Views/Pages/RegularListB.aspx">
+      <publishTime>04/10/2013 16:00:57</publishTime>
+    </File>
+    <File Include="Views/Pages/RegularListC.aspx">
+      <publishTime>04/10/2013 16:01:10</publishTime>
+    </File>
+    <File Include="Views/Pages/RegularListD.aspx">
+      <publishTime>04/10/2013 16:01:20</publishTime>
+    </File>
+    <File Include="Views/Pages/RegularListE.aspx">
+      <publishTime>04/10/2013 16:01:27</publishTime>
+    </File>
+    <File Include="Views/Pages/RegularSmallA.aspx">
+      <publishTime>04/10/2013 16:01:47</publishTime>
+    </File>
+    <File Include="Views/Pages/RegularSmallB.aspx">
+      <publishTime>04/10/2013 16:02:01</publishTime>
+    </File>
+    <File Include="Views/Pages/RegularSmallC.aspx">
+      <publishTime>04/10/2013 16:02:12</publishTime>
+    </File>
+    <File Include="Views/Pages/RegularSmallD.aspx">
+      <publishTime>04/10/2013 16:02:21</publishTime>
+    </File>
+    <File Include="Views/Pages/RegularSmallE.aspx">
+      <publishTime>04/10/2013 16:02:34</publishTime>
+    </File>
+    <File Include="Views/Pages/SmallArticle.aspx">
+      <publishTime>04/16/2013 14:33:15</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/16/2013 14:33:48</publishTime>
+    </File>
+    <File Include="XSLT/Edition.xslt">
+      <publishTime>04/08/2013 11:03:05</publishTime>
+    </File>
+    <File Include="XSLT/EditionContainer.xslt">
+      <publishTime>04/04/2013 12:17:48</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

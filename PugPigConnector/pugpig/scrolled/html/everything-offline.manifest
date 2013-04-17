@@ -1,0 +1,21 @@
+CACHE MANIFEST
+
+# Normally each HTML page would have its own HTML5 offline manifest
+# However, for this demo we are using a single manifest for all the 
+# assets for the every page in the demo
+
+../css/smallarticle.css
+../css/article.css
+../css/contents.css
+../css/section-index.css
+img/article-a1.jpg
+img/article-b1.jpg
+img/article-c1.jpg
+img/article-d1.jpg
+img/article-d2.jpg
+img/article-e1.jpg
+img/gal1.jpg
+img/gal2.jpg
+img/gal3.jpg
+img/gal4.jpg
+img/gal5.jpg

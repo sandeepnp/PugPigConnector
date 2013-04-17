@@ -1,0 +1,185 @@
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app">
+<id>tag:books.pugpig.com,2012-01:blitzen</id>
+<link rel="self" type="application/atom+xml;profile=opds-catalog;kind=acquisition" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/atom.xml"/>
+<title>Blitzen Template</title>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<author>
+<name>Kaldor Group</name>
+</author>
+<entry>
+<title>Cover</title>
+<id>article1</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="contents.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+</entry>
+
+<entry>
+<title>Gallery article</title>
+<id>article1</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="section-index-a.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/section-index-a.html"/>
+</entry>
+<entry>
+<title>News article</title>
+<id>article2</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="article-a1.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/article-a1.html"/>
+</entry>
+<entry>
+<title>News article small</title>
+<id>article3</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="article-a1-small.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/article-a1-small.html"/>
+</entry>
+
+
+
+<entry>
+<title>Sports article index</title>
+<id>article4</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="section-index-b.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/section-index-b.html"/>
+</entry>
+<entry>
+<title>Sports article</title>
+<id>article5</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="article-b1.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/article-b1.html"/>
+</entry>
+<entry>
+<title>Sports article small</title>
+<id>article6</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="article-b1-small.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/article-b1-small.html"/>
+</entry>
+
+<entry>
+<title>Business article index</title>
+<id>article7</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="section-index-c.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/section-index-c.html"/>
+</entry>
+<entry>
+<title>Business article</title>
+<id>article8</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="article-c1.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/article-c1.html"/>
+</entry>
+<entry>
+<title>Business article small</title>
+<id>article9</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="article-c1-small.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/article-c1-small.html"/>
+</entry>
+
+<entry>
+<title>Entertainment article index</title>
+<id>article10</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="section-index-d.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/section-index-d.html"/>
+</entry>
+<entry>
+<title>Entertainment article small</title>
+<id>article11</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="article-d1-small.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/article-d1-small.html"/>
+</entry>
+<entry>
+<title>Entertainment article</title>
+<id>article12</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="article-d1.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/article-d1.html"/>
+</entry>
+<entry>
+<title>Entertainment article 2</title>
+<id>article13</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="article-d2.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/article-d2.html"/>
+</entry>
+
+<entry>
+<title>Finance article index</title>
+<id>article14</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="section-index-e.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/section-index-e.html"/>
+</entry>
+<entry>
+<title>Finance article</title>
+<id>article15</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="article-e1.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/article-e1.html"/>
+</entry>
+<entry>
+<title>Finance article small</title>
+<id>article16</id>
+<updated>2012-01-16T16:00:51+01:00</updated>
+<published>2012-01-16T16:00:51+01:00</published>
+<summary/>
+<link rel="alternate" type="text/html" href="article-e1-small.html"/>
+<link rel="related" type="text/cache-manifest" href="everything-offline.manifest"/>
+<link rel="bookmark" type="text/html" href="http://books.pugpig.com/BOOKTEMPLATES/blitzen/article-e1-small.html"/>
+</entry>
+</feed>
