@@ -17,7 +17,8 @@ namespace PugPigConnector.Models.Pages
                  GroupName = SystemTabNames.Content,
                  Order = 1)]
         public virtual string SubTitle { get; set; }
-        
+
+        [Required]
         [Display(Name = "Summary",
                  Description = "",
                  GroupName = SystemTabNames.Content,

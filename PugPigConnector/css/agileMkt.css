@@ -1,0 +1,356 @@
+/* General styles */
+
+@font-face {
+	font-family: 'Corda-Light';
+	src: url('../fonts/24D34F_0_0.eot');
+	src: url('../fonts/24D34F_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/24D34F_0_0.woff') format('woff'),url('../fonts/24D34F_0_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'franchiseregular';
+    src: url('../fonts/franchise-bold-webfont.eot');
+    src: url('../fonts/franchise-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/franchise-bold-webfont.woff') format('woff'),
+         url('../fonts/franchise-bold-webfont.ttf') format('truetype'),
+         url('../fonts/franchise-bold-webfont.svg#franchiseregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    text-transform:uppercase;
+
+}
+@font-face {
+    font-family: 'Lobster13Regular';
+    src: url('../fonts/Lobster_1.3-webfont.eot');
+    src: url('../fonts/Lobster_1.3-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Lobster_1.3-webfont.woff') format('woff'),
+         url('../fonts/Lobster_1.3-webfont.ttf') format('truetype'),
+         url('../fonts/Lobster_1.3-webfont.svg#Lobster13Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+	padding: 5em 5em 5em 7em;	
+	font-size:1em;
+	line-height:1.6;
+	text-align: justify;
+	font-family: Corda-Light;
+	color: #1a1919;
+}
+
+a:link {color:#009bca;
+text-decoration:none;}      /* unvisited link */
+a:visited {color:009bca;}  /* visited link */
+a:hover {color:#EEEEEE;}  /* mouse over link */
+a:active {color:#009bca;}  /* selected link */
+
+.cover {
+	padding: 0;
+	background-color:#00a6df;
+}
+.back-cover {
+	padding: 0;
+	background-color:#0099ce;
+}
+.image-page {
+	padding: 0;
+}
+.large-image {
+	text-align: center;
+	padding: 5% 0 2% 0;
+	}
+.grey {
+	background-color:#f7f7f7;
+}
+
+ 
+h1, h2, h3, h4 {
+	
+	margin: 4px 0 0;
+	clear:both;
+	font-weight:normal;
+	font-family: 'franchiseregular';
+	line-height: 1em;
+	color:#009bca;
+	text-align: left;    
+}
+h1 {
+	font-size: 5em !important;
+    line-height: 1em;
+    display:block;
+    color: #1A1919;
+    font-family: 'franchiseregular';
+    text-shadow: 3px 3px #D7D8D7;
+    text-align:left;
+    margin-top: -0.1em;
+}
+.subheading {
+	font-size: 2em;
+	font-family: 'Lobster13Regular' !important;	
+	color:#009bca;
+}
+
+h2 {
+	font-size: 4em;
+	text-shadow: 2px 2px #EEEEEE;
+}
+h3 {
+	font-size:3em;
+	text-shadow: 2px 2px #EEEEEE;
+}
+h4 {
+	display: inline-block;
+    font-size: 1.3em;
+    margin: 0;
+    font-weight:bold;
+    font-family: Corda-Light;
+    }
+
+.absolute {
+	position:absolute;
+	bottom: 40px;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0;
+	margin-left: 0;
+	}
+ul li { list-style:url('../img/bullet.png'); }	
+	
+i, q {
+color: #009bca;
+}
+q {
+	font-style:italic;
+}
+
+.large-text {
+    color: #009bca;
+    font-size: 3em;
+    font-weight: bold;
+    line-height: 50px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.medium-text {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 1.5em;
+}
+dl {
+	background-color: #E5E5E5;
+    clear: both;
+    display: block;
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 33.33333%;
+    padding-bottom: 20px;
+
+}
+dt {
+	padding:0.3em;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;
+	color: #72bfdb;
+	font-size:2em;
+	line-height: 1.3em;
+    text-align: left;
+    text-shadow:1px 1px #fff;
+
+}
+dd {
+	margin:0;
+	padding:1em 1em 0;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box; 
+	font-size:0.8em;
+	text-align:left;
+}
+.strong {
+	font-weight:bold;
+}
+.textRight {
+	right: 5em;
+    text-align: right;
+}
+.floatRight {
+	float:right;
+}
+.numbers {
+	padding-bottom:20px;
+}
+
+.authors article { /* This is for the section about the authors  */
+	margin:30px 0 20px 0;
+	min-height: 150px;
+}
+.authors p {
+
+	margin-top:0;
+}
+
+.author {
+ 	clear: both;
+    float: left;
+    margin: 0 20px 0 0;
+    border: #009bca solid 3px;
+}
+.columns {
+-moz-column-count:2; /* Firefox */
+-webkit-column-count:2; /* Safari and Chrome */
+column-count:2;
+-moz-column-gap:40px; /* Firefox */
+-webkit-column-gap:40px; /* Safari and Chrome */
+column-gap:40px;
+}
+dt span {
+	text-align: center;
+	clear:both;
+	display:block;
+}
+dt span.blue {
+	text-shadow:1px 1px #000;
+}
+p.textRight {
+	font-size:.8em;
+}
+blockquote p {
+	color: #009bca;
+    font-size: 1.7em;
+    text-align:left;
+    font-family: 'Lobster13Regular' !important;
+}
+.center-align {
+	text-align:center;
+}
+cite {
+	color: #BBBBBB;
+    display: block;
+    font-style: normal;
+    font-weight: bold;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+::-moz-selection {
+    background: #009bca;
+    text-shadow: none;
+    color:#fff;
+}
+
+::selection {
+    background: #009bca;
+    text-shadow: none;
+    color:#fff;
+}
+.italic {
+	font-style: italic;
+}
+.blue {
+	color:#009bca;
+}
+.callout {
+	color:#009bca;
+	font-size:1.2em;
+	width:65%;
+	margin:auto;
+	font-style: italic;
+	padding:1em;
+	-webkit-box-sizing: border-box;
+	box-sizing:border-box;
+	margin-bottom:1em;
+
+}
+.callout p {
+	text-shadow:1px 1px 1px #ddd;
+}
+.intro {
+    font-size: 1.5em;
+    font-weight: light;
+    letter-spacing: 0.5px;
+    text-align:left;
+    line-height:1em;
+
+}
+img {
+	max-width: 100%;
+	max-height: auto;
+}
+.blue-title-page {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-weight:bold;
+	width:295px;
+	color:#009bca;
+	margin:auto;
+	text-align:center;
+	border-bottom: dotted #009bca 3px;
+	border-top: dotted #009bca 3px;
+	padding-top: 60px;
+}
+.line1 {
+	font-size:4.6em;
+	line-height: 0em;
+}
+.line2 {
+	font-size:4.8em;
+	line-height: 1.6em;
+}
+.line3 {
+	font-size:3.4em;
+	line-height: 0.4em;
+}
+.line4 {
+	font-size:4.7em;
+	line-height: 1.6em;
+}
+.line5 {
+	font-size:4.1em;
+	line-height: 0.4em;
+}
+.line6 {
+	font-size:14em;
+	line-height: 1.2em;
+}
+
+
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px) 
+and (orientation : landscape) {
+	body {
+	}
+
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px) 
+and (orientation : portrait) {
+	body {
+		
+	}
+	
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 480px) {
+/* Styles */
+
+body {
+	padding: 1em 1em 1em 1em;
+	}
+h1 {
+	font-size: 4em !important;
+	}
+dt {
+	font-size:1em;
+	}
+
+
+}

@@ -109,11 +109,14 @@
     <Compile Include="Models\Blocks\ArticleBlockType.cs" />
     <Compile Include="Models\Blocks\ArticleListItemBlockType.cs" />
     <Compile Include="Models\Blocks\ArticleListItem2BlockType.cs" />
+    <Compile Include="Models\Blocks\ContentBlock.cs" />
     <Compile Include="Models\Blocks\CoverPageListArticleBlockType.cs" />
     <Compile Include="Models\Blocks\CoverPageArticleBlockType.cs" />
     <Compile Include="Models\Pages\ArticlePage.cs" />
     <Compile Include="Models\Pages\ComplexCoverPage.cs" />
     <Compile Include="Models\Pages\ArticleListPage.cs" />
+    <Compile Include="Models\Pages\Content.cs" />
+    <Compile Include="Models\Pages\ContentA.cs" />
     <Compile Include="Models\Pages\CoverPageLatest.cs" />
     <Compile Include="Models\Pages\GenericCoverPage.cs" />
     <Compile Include="Models\Pages\GenericRegularListPage.cs" />
@@ -153,6 +156,13 @@
     </Compile>
     <Compile Include="Views\Blocks\ArticleListItem2Block.ascx.designer.cs">
       <DependentUpon>ArticleListItem2Block.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Blocks\Content.ascx.cs">
+      <DependentUpon>Content.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Blocks\Content.ascx.designer.cs">
+      <DependentUpon>Content.ascx</DependentUpon>
     </Compile>
     <Compile Include="Views\Blocks\CoverPageArticleBlock.ascx.cs">
       <DependentUpon>CoverPageArticleBlock.ascx</DependentUpon>
@@ -195,6 +205,20 @@
     </Compile>
     <Compile Include="Views\Pages\ArticleList.aspx.designer.cs">
       <DependentUpon>ArticleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Content.aspx.cs">
+      <DependentUpon>Content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\Content.aspx.designer.cs">
+      <DependentUpon>Content.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ContentA.aspx.cs">
+      <DependentUpon>ContentA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\ContentA.aspx.designer.cs">
+      <DependentUpon>ContentA.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\CoverLatest.aspx.cs">
       <DependentUpon>CoverLatest.aspx</DependentUpon>
@@ -386,12 +410,15 @@
     <Content Include="scripts\tracking.js" />
     <Content Include="Views\Blocks\ArticleListItemBlock.ascx" />
     <Content Include="Views\Blocks\ArticleListItem2Block.ascx" />
+    <Content Include="Views\Blocks\Content.ascx" />
     <Content Include="Views\Blocks\CoverPageArticleBlock.ascx" />
     <Content Include="Views\Blocks\ArticleBlock.ascx" />
     <Content Include="Views\Blocks\CoverPageListArticleBlock.ascx" />
     <Content Include="Views\Pages\ComplexCover.aspx" />
     <Content Include="Views\Pages\Article.aspx" />
     <Content Include="Views\Pages\ArticleList.aspx" />
+    <Content Include="Views\Pages\Content.aspx" />
+    <Content Include="Views\Pages\ContentA.aspx" />
     <Content Include="Views\Pages\CoverLatest.aspx" />
     <Content Include="Views\Pages\SmallArticle.aspx" />
     <Content Include="Views\Pages\GenericCover.aspx" />
