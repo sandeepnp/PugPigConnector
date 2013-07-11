@@ -102,6 +102,10 @@
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
+    <Compile Include="Business\Channels\DisplayResolutionBase.cs" />
+    <Compile Include="Business\Channels\DisplayResolutions.cs" />
+    <Compile Include="Business\Channels\MobileChannel.cs" />
+    <Compile Include="Business\Channels\WebChannel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -112,6 +116,14 @@
     <Compile Include="Models\Blocks\ContentBlock.cs" />
     <Compile Include="Models\Blocks\CoverPageListArticleBlockType.cs" />
     <Compile Include="Models\Blocks\CoverPageArticleBlockType.cs" />
+    <Compile Include="Models\Pages\ArticleSmallPage305.cs" />
+    <Compile Include="Models\Pages\ArticleRegularPage305.cs" />
+    <Compile Include="Models\Pages\DemoPage305.cs" />
+    <Compile Include="Models\Pages\RegularPage305.cs" />
+    <Compile Include="Models\Pages\CoverPage186.cs" />
+    <Compile Include="Models\Pages\CoverPage305.cs" />
+    <Compile Include="Models\Pages\GenericPage.cs" />
+    <Compile Include="Models\SiteContentType.cs" />
     <Compile Include="Models\Pages\ArticlePage.cs" />
     <Compile Include="Models\Pages\ComplexCoverPage.cs" />
     <Compile Include="Models\Pages\ArticleListPage.cs" />
@@ -122,6 +134,7 @@
     <Compile Include="Models\Pages\GenericRegularListPage.cs" />
     <Compile Include="Models\Pages\GenericRegularSmallPage.cs" />
     <Compile Include="Models\Pages\GenericRegularPage.cs" />
+    <Compile Include="Models\Pages\ProductPage.cs" />
     <Compile Include="Models\Pages\RegularSmallPageD.cs" />
     <Compile Include="Models\Pages\RegularSmallPageE.cs" />
     <Compile Include="Models\Pages\RegularListPageE.cs" />
@@ -141,8 +154,15 @@
     <Compile Include="Models\Pages\EditionPage.cs" />
     <Compile Include="Models\Pages\EditionContainerPage.cs" />
     <Compile Include="Models\Pages\RegularPageA.cs" />
+    <Compile Include="Models\Pages\SitePageData.cs" />
     <Compile Include="Models\Pages\SmallArticlePage.cs" />
+    <Compile Include="Models\Pages\StandardPage.cs" />
+    <Compile Include="Models\Properties\PropertyStringList.cs" />
+    <Compile Include="Models\SiteImageUrl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TinyMceExtendedValidElements.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Views\Blocks\ArticleListItemBlock.ascx.cs">
       <DependentUpon>ArticleListItemBlock.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -220,12 +240,71 @@
     <Compile Include="Views\Pages\ContentA.aspx.designer.cs">
       <DependentUpon>ContentA.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Pages\ArticleSmallTemplate305.aspx.cs">
+      <DependentUpon>ArticleSmallTemplate305.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\ArticleSmallTemplate305.aspx.designer.cs">
+      <DependentUpon>ArticleSmallTemplate305.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ArticleRegularTemplate305.aspx.cs">
+      <DependentUpon>ArticleRegularTemplate305.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\ArticleRegularTemplate305.aspx.designer.cs">
+      <DependentUpon>ArticleRegularTemplate305.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\DemoTemplate305.aspx.cs">
+      <DependentUpon>DemoTemplate305.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\DemoTemplate305.aspx.designer.cs">
+      <DependentUpon>DemoTemplate305.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\RegularPageTemplate305.aspx.cs">
+      <DependentUpon>RegularPageTemplate305.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\RegularPageTemplate305.aspx.designer.cs">
+      <DependentUpon>RegularPageTemplate305.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\CoverPageTemplate186.aspx.cs">
+      <DependentUpon>CoverPageTemplate186.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\CoverPageTemplate186.aspx.designer.cs">
+      <DependentUpon>CoverPageTemplate186.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\CoverLatest.aspx.cs">
       <DependentUpon>CoverLatest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Pages\CoverLatest.aspx.designer.cs">
       <DependentUpon>CoverLatest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\CoverPageTemplate305.aspx.cs">
+      <DependentUpon>CoverPageTemplate305.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\CoverPageTemplate305.aspx.designer.cs">
+      <DependentUpon>CoverPageTemplate305.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\GenericPageTemplate.aspx.cs">
+      <DependentUpon>GenericPageTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\GenericPageTemplate.aspx.designer.cs">
+      <DependentUpon>GenericPageTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ProductPageTemplate.aspx.cs">
+      <DependentUpon>ProductPageTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\ProductPageTemplate.aspx.designer.cs">
+      <DependentUpon>ProductPageTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\SiteTemplatePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Pages\SmallArticle.aspx.cs">
       <DependentUpon>SmallArticle.aspx</DependentUpon>
@@ -397,16 +476,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Business\" />
     <Folder Include="css\" />
     <Folder Include="img\" />
-    <Folder Include="Models\Properties\" />
     <Folder Include="Static\" />
+    <Folder Include="Styles\" />
     <Folder Include="Views\MasterPages\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Resources\LanguageFiles\Channels.xml" />
+    <Content Include="Resources\LanguageFiles\_ReadMe.txt" />
     <Content Include="scripts\tracking.js" />
     <Content Include="Views\Blocks\ArticleListItemBlock.ascx" />
     <Content Include="Views\Blocks\ArticleListItem2Block.ascx" />
@@ -419,7 +499,15 @@
     <Content Include="Views\Pages\ArticleList.aspx" />
     <Content Include="Views\Pages\Content.aspx" />
     <Content Include="Views\Pages\ContentA.aspx" />
+    <Content Include="Views\Pages\ArticleSmallTemplate305.aspx" />
+    <Content Include="Views\Pages\ArticleRegularTemplate305.aspx" />
+    <Content Include="Views\Pages\DemoTemplate305.aspx" />
+    <Content Include="Views\Pages\RegularPageTemplate305.aspx" />
+    <Content Include="Views\Pages\CoverPageTemplate186.aspx" />
     <Content Include="Views\Pages\CoverLatest.aspx" />
+    <Content Include="Views\Pages\CoverPageTemplate305.aspx" />
+    <Content Include="Views\Pages\GenericPageTemplate.aspx" />
+    <Content Include="Views\Pages\ProductPageTemplate.aspx" />
     <Content Include="Views\Pages\SmallArticle.aspx" />
     <Content Include="Views\Pages\GenericCover.aspx" />
     <Content Include="Views\Pages\GenericRegularList.aspx" />
@@ -457,6 +545,7 @@
     </Content>
     <Content Include="connectionStrings.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="XSLT\Edition.xslt">
       <SubType>Designer</SubType>

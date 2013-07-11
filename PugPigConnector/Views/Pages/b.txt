@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html manifest="/page.manifest?pageId=255">
+
+    <head id="Head1"><title>
+	Column Test
+</title><meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- To get rid of the URL and button bars -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <!-- Status Bar Style (default, black, black-translucent) --> 
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" /><link rel="stylesheet" type="text/css" href="/css/general.css" /><link rel="stylesheet" type="text/css" href="/css/responsive.css" /><link rel="stylesheet" type="text/css" href="/util/styles/quicknavigator.css" />
+<script type="text/javascript" src="/util/javascript/quicknavigator.js"></script>
+<script type="text/javascript">
+
+                //<![CDATA[ 
+                (function () { new epi.QuickNavigator({"menuItems":{"editMode":{"caption":"Go to Edit View","url":"/EPiServer/CMS/Home#context=epi.cms.contentdata:///255","javascript":null,"enabledScript":"true","imageUrl":null,"mode":0,"subMenu":null},"dashboard":{"caption":"Go to my Dashboard","url":"/EPiServer","javascript":null,"enabledScript":"true","imageUrl":null,"mode":0,"subMenu":null}},"menuTitle":"EPiServer","defaultUrl":"/EPiServer/CMS/Home#context=epi.cms.contentdata:///255"}); }()); 
+                //]]>
+</script>
+</head>  
+    
+    <div>
+	<p>
+<header>
+</header>
+</p>
+<h1>Pugpig Gazette</h1>
+<p><section class="topstories"></section></p>
+<ul>
+<li><a href="/en/cover/article-small.html"><article></article>
+<h2>Lorizzle ipsizzle dolizzle</h2>
+<img src="/img/img/article-a1.jpg" alt="" /> </a></li>
+<li><a href="/en/cover/article-reg.html"><article></article>
+<h2>Cras accumsizzle</h2>
+<img src="/img/img/article-b1.jpg" alt="" /> </a></li>
+<li><a href="/en/cover/section-index.html"><article></article>
+<h2>Sizzle go to hizzle</h2>
+<img src="/img/img/article-c1.jpg" alt="" /> </a></li>
+<li><a href="/en/cover/article-small.html.html"><article></article>
+<h2>Lorizzle ipsizzle dolizzle</h2>
+<img src="/img/img/article-d1.jpg" alt="" /> </a></li>
+<li><a href="/en/cover/article-reg.html"><article></article>
+<h2>Cras accumsizzle</h2>
+<img src="/img/img/article-d2.jpg" alt="" /> </a></li>
+<li><a href="/en/cover/section-index.html"><article></article>
+<h2>Sizzle go to hizzle</h2>
+<img src="/img/img/article-e1.jpg" alt="" /> </a></li>
+</ul>
+</div>
+   
+
+</html> 
