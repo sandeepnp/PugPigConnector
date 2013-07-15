@@ -35,7 +35,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/06/2013 16:16:50</publishTime>
     </File>
     <File Include="bin/PugPigConnector.dll">
-      <publishTime>06/21/2013 11:56:29</publishTime>
+      <publishTime>07/15/2013 10:24:40</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>03/22/2013 11:06:13</publishTime>
@@ -88,6 +88,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Pages/ContentA.aspx">
       <publishTime>04/22/2013 11:19:45</publishTime>
     </File>
+    <File Include="Views/Pages/ContentPageTemplate127.aspx">
+      <publishTime>07/12/2013 15:25:04</publishTime>
+    </File>
+    <File Include="Views/Pages/ContentPageTemplate157.aspx">
+      <publishTime>07/15/2013 09:54:21</publishTime>
+    </File>
     <File Include="Views/Pages/Cover.aspx">
       <publishTime>04/04/2013 14:29:07</publishTime>
     </File>
@@ -123,6 +129,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Views/Pages/GenericRegularSmall.aspx">
       <publishTime>04/10/2013 16:55:08</publishTime>
+    </File>
+    <File Include="Views/Pages/IndexPageTemplate127.aspx">
+      <publishTime>07/12/2013 15:24:57</publishTime>
     </File>
     <File Include="Views/Pages/Manifest.ashx">
       <publishTime>03/27/2013 16:54:35</publishTime>
@@ -185,7 +194,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/16/2013 14:33:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/21/2013 11:56:30</publishTime>
+      <publishTime>07/15/2013 10:24:40</publishTime>
     </File>
     <File Include="XSLT/Edition.xslt">
       <publishTime>04/08/2013 11:03:05</publishTime>

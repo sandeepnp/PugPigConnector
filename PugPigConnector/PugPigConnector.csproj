@@ -118,6 +118,9 @@
     <Compile Include="Models\Blocks\CoverPageArticleBlockType.cs" />
     <Compile Include="Models\Pages\ArticleSmallPage305.cs" />
     <Compile Include="Models\Pages\ArticleRegularPage305.cs" />
+    <Compile Include="Models\Pages\ContentPage127.cs" />
+    <Compile Include="Models\Pages\ContentPage157.cs" />
+    <Compile Include="Models\Pages\IndexPage127.cs" />
     <Compile Include="Models\Pages\DemoPage305.cs" />
     <Compile Include="Models\Pages\RegularPage305.cs" />
     <Compile Include="Models\Pages\CoverPage186.cs" />
@@ -253,6 +256,27 @@
     </Compile>
     <Compile Include="Views\Pages\ArticleRegularTemplate305.aspx.designer.cs">
       <DependentUpon>ArticleRegularTemplate305.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ContentPageTemplate127.aspx.cs">
+      <DependentUpon>ContentPageTemplate127.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\ContentPageTemplate127.aspx.designer.cs">
+      <DependentUpon>ContentPageTemplate127.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ContentPageTemplate157.aspx.cs">
+      <DependentUpon>ContentPageTemplate157.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\ContentPageTemplate157.aspx.designer.cs">
+      <DependentUpon>ContentPageTemplate157.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\IndexPageTemplate127.aspx.cs">
+      <DependentUpon>IndexPageTemplate127.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\IndexPageTemplate127.aspx.designer.cs">
+      <DependentUpon>IndexPageTemplate127.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\DemoTemplate305.aspx.cs">
       <DependentUpon>DemoTemplate305.aspx</DependentUpon>
@@ -501,6 +525,9 @@
     <Content Include="Views\Pages\ContentA.aspx" />
     <Content Include="Views\Pages\ArticleSmallTemplate305.aspx" />
     <Content Include="Views\Pages\ArticleRegularTemplate305.aspx" />
+    <Content Include="Views\Pages\ContentPageTemplate127.aspx" />
+    <Content Include="Views\Pages\ContentPageTemplate157.aspx" />
+    <Content Include="Views\Pages\IndexPageTemplate127.aspx" />
     <Content Include="Views\Pages\DemoTemplate305.aspx" />
     <Content Include="Views\Pages\RegularPageTemplate305.aspx" />
     <Content Include="Views\Pages\CoverPageTemplate186.aspx" />

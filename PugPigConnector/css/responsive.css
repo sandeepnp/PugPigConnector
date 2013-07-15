@@ -13,7 +13,6 @@
   	}
   header h1 {
   	 font-size: 16px;
-    margin-top: 10px;
     padding: 0 15px;
   	}
   article h1 {
@@ -60,20 +59,14 @@
 }
 
 @media (min-width:481px) and (max-width:768px) {
-  
-header h1 {
-  	font-size: 18px;
-  	margin-top: 10px;
-    padding: 3px 53px;
-  }
+
   
 header { 
-  height:26px;
+  height:30px;
   display:block;
   }
 header h1 {
   font-size: 18px;
-    margin-top: 10px;
     padding: 3px 15px 3px 27px;
   }
  
@@ -105,7 +98,7 @@ header h1 {
   }  
   
   article {
-    height:auto;
+    height:100%;
     display:block;
   }
     .articles-list p {
@@ -120,7 +113,6 @@ header {
   }
 header h1 {
     font-size: 25px;
-    margin-top: 15px;
     padding: 8px 53px;
 }
  
