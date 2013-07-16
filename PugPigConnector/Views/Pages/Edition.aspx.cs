@@ -8,6 +8,7 @@ using EPiServer;
 using EPiServer.Core;
 using EPiServer.Framework.DataAnnotations;
 using PugPigConnector.Models.Pages;
+using System.Configuration;
 
 namespace PugPigConnector.Views.Pages
 {
@@ -93,7 +94,8 @@ namespace PugPigConnector.Views.Pages
                 XmlNode pageLinkNode = doc.CreateElement("pageLink");
                 //pageLinkNode.InnerText = childPage.LinkURL;
                 //pageLinkNode.InnerText = GetExternalLink(childPage);
-                pageLinkNode.InnerText = UriSupport.AbsoluteUrlBySettings(childPage.LinkURL);
+                //pageLinkNode.InnerText = UriSupport.AbsoluteUrlBySettings(childPage.LinkURL);
+                pageLinkNode.InnerText = GetFriendlyURL(childPage);
                 itemNode.AppendChild(pageLinkNode);
 
                 XmlNode manifestLinkNode = doc.CreateElement("manifestLink");
@@ -262,6 +264,29 @@ namespace PugPigConnector.Views.Pages
             uriBuilder.Path = pageURL;
 
             return uriBuilder.Uri.AbsoluteUri;
+        }
+
+        public static string GetFriendlyURL(PageData p)
+        {
+            UrlBuilder pageURLBuilder = new UrlBuilder(p.LinkURL);
+
+            EPiServer.Global.UrlRewriteProvider.ConvertToExternal(pageURLBuilder, p.PageLink, UTF8Encoding.UTF8);
+
+            string pageURL = pageURLBuilder.ToString();
+
+            UriBuilder uriBuilder = new UriBuilder(EPiServer.Configuration.Settings.Instance.SiteUrl);
+
+            uriBuilder.Path = pageURL;
+
+            string friendlyURL = string.Empty;
+
+            if (ConfigurationManager.AppSettings["SiteRoot"] != null)
+            {
+                friendlyURL = ConfigurationManager.AppSettings["SiteRoot"] + pageURLBuilder.Path;
+                friendlyURL = friendlyURL.Substring(0, (friendlyURL.Length - 1));
+            }
+
+            return friendlyURL;
         }
     }
 }

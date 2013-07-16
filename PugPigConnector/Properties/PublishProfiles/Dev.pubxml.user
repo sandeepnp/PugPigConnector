@@ -35,10 +35,94 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/06/2013 16:16:50</publishTime>
     </File>
     <File Include="bin/PugPigConnector.dll">
-      <publishTime>07/15/2013 10:24:40</publishTime>
+      <publishTime>07/16/2013 17:07:12</publishTime>
+    </File>
+    <File Include="css/agileMkt.css">
+      <publishTime>04/10/2013 14:16:08</publishTime>
+    </File>
+    <File Include="css/article.css">
+      <publishTime>03/22/2013 12:00:19</publishTime>
+    </File>
+    <File Include="css/contents.css">
+      <publishTime>07/12/2013 10:39:08</publishTime>
+    </File>
+    <File Include="css/general.css">
+      <publishTime>07/15/2013 14:49:34</publishTime>
+    </File>
+    <File Include="css/jquery.fancybox.css">
+      <publishTime>04/10/2013 14:16:08</publishTime>
+    </File>
+    <File Include="css/main.css">
+      <publishTime>04/10/2013 14:16:08</publishTime>
+    </File>
+    <File Include="css/MyFontsWebfontsKit.css">
+      <publishTime>04/10/2013 14:16:08</publishTime>
+    </File>
+    <File Include="css/normalize.css">
+      <publishTime>03/18/2013 15:42:28</publishTime>
+    </File>
+    <File Include="css/responsive.css">
+      <publishTime>07/15/2013 14:43:40</publishTime>
+    </File>
+    <File Include="css/scrolling-largeimage.css">
+      <publishTime>02/20/2013 08:38:42</publishTime>
+    </File>
+    <File Include="css/section-index.css">
+      <publishTime>03/22/2013 12:00:19</publishTime>
+    </File>
+    <File Include="css/smallarticle.css">
+      <publishTime>03/22/2013 12:00:19</publishTime>
+    </File>
+    <File Include="css/stylesheet.css">
+      <publishTime>05/24/2013 10:38:18</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>03/22/2013 11:06:13</publishTime>
+    </File>
+    <File Include="img/a1.jpg">
+      <publishTime>07/16/2013 14:19:08</publishTime>
+    </File>
+    <File Include="img/a2.jpg">
+      <publishTime>07/16/2013 14:19:48</publishTime>
+    </File>
+    <File Include="img/a3.jpg">
+      <publishTime>07/16/2013 14:20:30</publishTime>
+    </File>
+    <File Include="img/a4.jpg">
+      <publishTime>07/16/2013 14:21:40</publishTime>
+    </File>
+    <File Include="img/article-a1.jpg">
+      <publishTime>07/16/2013 14:23:30</publishTime>
+    </File>
+    <File Include="img/article-b1.jpg">
+      <publishTime>07/16/2013 14:56:16</publishTime>
+    </File>
+    <File Include="img/article-c1.jpg">
+      <publishTime>07/16/2013 15:01:12</publishTime>
+    </File>
+    <File Include="img/article-d1.jpg">
+      <publishTime>07/16/2013 15:09:52</publishTime>
+    </File>
+    <File Include="img/article-d2.jpg">
+      <publishTime>07/16/2013 15:08:44</publishTime>
+    </File>
+    <File Include="img/article-e1.jpg">
+      <publishTime>07/16/2013 15:13:28</publishTime>
+    </File>
+    <File Include="img/gal1.jpg">
+      <publishTime>07/16/2013 14:53:44</publishTime>
+    </File>
+    <File Include="img/gal2.jpg">
+      <publishTime>07/16/2013 14:54:12</publishTime>
+    </File>
+    <File Include="img/gal3.jpg">
+      <publishTime>07/16/2013 14:54:34</publishTime>
+    </File>
+    <File Include="img/gal4.jpg">
+      <publishTime>07/16/2013 14:57:52</publishTime>
+    </File>
+    <File Include="img/gal5.jpg">
+      <publishTime>07/16/2013 15:16:24</publishTime>
     </File>
     <File Include="Resources/LanguageFiles/Channels.xml">
       <publishTime>05/22/2013 10:22:59</publishTime>
@@ -136,6 +220,27 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Pages/Manifest.ashx">
       <publishTime>03/27/2013 16:54:35</publishTime>
     </File>
+    <File Include="Views/Pages/NovartisContentPageTemplate.aspx">
+      <publishTime>07/15/2013 17:45:21</publishTime>
+    </File>
+    <File Include="Views/Pages/NovartisCoverPageTemplate.aspx">
+      <publishTime>07/15/2013 16:01:20</publishTime>
+    </File>
+    <File Include="Views/Pages/NovartisGenericPageTemplate.aspx">
+      <publishTime>07/15/2013 16:24:28</publishTime>
+    </File>
+    <File Include="Views/Pages/NovartisNoMainImageTemplate.aspx">
+      <publishTime>07/16/2013 17:01:41</publishTime>
+    </File>
+    <File Include="Views/Pages/NovartisScrollingHeroSideBarTemplate.aspx">
+      <publishTime>07/16/2013 16:58:23</publishTime>
+    </File>
+    <File Include="Views/Pages/NovartisScrollingLargeImageTemplate.aspx">
+      <publishTime>07/16/2013 16:30:39</publishTime>
+    </File>
+    <File Include="Views/Pages/NovartisSegmentedColumnedTemplate.aspx">
+      <publishTime>07/16/2013 16:26:41</publishTime>
+    </File>
     <File Include="Views/Pages/ProductPageTemplate.aspx">
       <publishTime>04/23/2013 17:10:38</publishTime>
     </File>
@@ -194,7 +299,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/16/2013 14:33:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/15/2013 10:24:40</publishTime>
+      <publishTime>07/16/2013 17:09:39</publishTime>
     </File>
     <File Include="XSLT/Edition.xslt">
       <publishTime>04/08/2013 11:03:05</publishTime>

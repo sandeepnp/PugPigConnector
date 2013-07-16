@@ -1,0 +1,134 @@
+* {
+  margin:0;
+  padding:0;
+  line-height:1.5em;
+  -webkit-text-size-adjust:100%;
+  font-family:Georgia, serif;
+}
+
+header h1 {
+  position:absolute;
+  top:20px;
+  left:22px;
+  padding:6px 12px;
+  background-color:rgba(0,0,0,0.5);
+  text-transform:uppercase;
+  font-weight:normal;
+  font-size:30px;
+  -webkit-text-size-adjust:none;
+  font-family:Helvetica, sans-serif;
+  z-index:2;
+  color:white;
+}
+
+article {
+  top:0;
+  left:0;
+  -webkit-box-sizing:border-box;
+  h1 {
+    position:relative;
+    font-size:42px;
+    line-height:50px;
+    font-family:Helvetica, sans-serif;
+    background-color:rgba(0,0,0,0.5);
+    color:white;
+  }
+}
+section.image_wrap {
+  background: url(../img/a4.jpg) no-repeat center;
+  background-size:cover;
+  position:relative;
+  height:500px;
+  header {
+    padding:0;
+    position:absolute;
+    bottom:0;
+    left:0;
+    h1 {
+      left:0;
+      top:auto;
+      color:#ccc;
+      background:none;
+      padding:6px 22px;
+      background-color:rgba(0,0,0,0.5);
+      color:white;
+    }
+    p.byline {
+        margin-bottom:0;
+        padding:6px 12px;
+        text-align:right; 
+        font-style:italic;
+        background-color:rgba(0,0,0,0.5);
+        color:white;
+    }
+  }
+}
+
+section.copy {
+  padding: 22px ;
+  -webkit-column-count:2;
+  display:inline-block;
+  p:first-of-type:first-letter { 
+    float:left; 
+    font-size:7em; 
+    line-height: 0.8em; 
+    color:#333; 
+    padding-right:20px; 
+    font-style:italic; 
+    font-weight: 200;
+  }
+  p {
+    text-indent:2em;
+    font-size:1.1rem;
+    float:right;
+    &:first-of-type {
+      text-indent:0;
+    }
+  }
+}
+
+figure {
+  display:inline-block;
+  width:100%;
+  img {
+    display:block;
+    width:100%;
+    height:auto;
+  }
+  &.gallery{
+    display:none;
+  }
+}
+
+figcaption {
+  position:absolute;
+  bottom:0px;
+  left:0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding:5px 10px;
+  width:100%;
+  background-color: rgba(0,0,0,0.5);
+  color:#eee;
+}
+
+@media screen and (max-width:480px) {
+  section.copy {
+    -webkit-column-count:auto;
+  }
+  figure {
+    margin:12px 0;
+  }
+  section.image_wrap figure {
+    margin:0
+  }
+  section.image_wrap header {
+    h1 {
+      font-size:26px;
+    }
+  }
+}
+
+
+
+figure, img {line-height:0;}
