@@ -10,3 +10,4 @@ C:\EPiServer\Sites\PugPigConnector\bin\EPiServer.XForms.dll
 C:\EPiServer\Sites\PugPigConnector\bin\log4net.dll
 C:\EPiServer\Sites\PugPigConnector\obj\Debug\PugPigConnector.dll
 C:\EPiServer\Sites\PugPigConnector\obj\Debug\PugPigConnector.pdb
+C:\EPiServer\Sites\PugPigConnector\obj\Debug\PugPigConnector.csprojResolveAssemblyReference.cache

@@ -119,6 +119,8 @@
     <Compile Include="Models\Pages\ArticleSmallPage305.cs" />
     <Compile Include="Models\Pages\ArticleRegularPage305.cs" />
     <Compile Include="Models\Pages\ContentPage127.cs" />
+    <Compile Include="Models\Pages\NovartisContentsPage.cs" />
+    <Compile Include="Models\Pages\NovartisStartPage.cs" />
     <Compile Include="Models\Pages\NovartisNoMainImage.cs" />
     <Compile Include="Models\Pages\NovartisScrollingHeroSideBar.cs" />
     <Compile Include="Models\Pages\NovartisSegmentedColumned.cs" />
@@ -269,6 +271,20 @@
     </Compile>
     <Compile Include="Views\Pages\ContentPageTemplate127.aspx.designer.cs">
       <DependentUpon>ContentPageTemplate127.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\NovartisContentsPageTemplate.aspx.cs">
+      <DependentUpon>NovartisContentsPageTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\NovartisContentsPageTemplate.aspx.designer.cs">
+      <DependentUpon>NovartisContentsPageTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\NovartisStartPageTemplate.aspx.cs">
+      <DependentUpon>NovartisStartPageTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\NovartisStartPageTemplate.aspx.designer.cs">
+      <DependentUpon>NovartisStartPageTemplate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\NovartisNoMainImageTemplate.aspx.cs">
       <DependentUpon>NovartisNoMainImageTemplate.aspx</DependentUpon>
@@ -583,7 +599,9 @@
     <Content Include="img\gal3.jpg" />
     <Content Include="img\gal4.jpg" />
     <Content Include="img\gal5.jpg" />
-    <Content Include="Resources\LanguageFiles\Channels.xml" />
+    <Content Include="Resources\LanguageFiles\Channels.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Resources\LanguageFiles\_ReadMe.txt" />
     <Content Include="scripts\tracking.js" />
     <Content Include="Views\Blocks\ArticleListItemBlock.ascx" />
@@ -600,6 +618,8 @@
     <Content Include="Views\Pages\ArticleSmallTemplate305.aspx" />
     <Content Include="Views\Pages\ArticleRegularTemplate305.aspx" />
     <Content Include="Views\Pages\ContentPageTemplate127.aspx" />
+    <Content Include="Views\Pages\NovartisContentsPageTemplate.aspx" />
+    <Content Include="Views\Pages\NovartisStartPageTemplate.aspx" />
     <Content Include="Views\Pages\NovartisNoMainImageTemplate.aspx" />
     <Content Include="Views\Pages\NovartisScrollingHeroSideBarTemplate.aspx" />
     <Content Include="Views\Pages\NovartisSegmentedColumnedTemplate.aspx" />

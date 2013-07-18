@@ -20,15 +20,15 @@
         }
     }
 
-    /// <summary>
-    /// Defines resolution for a vertical iPad
-    /// </summary>
-    public class IpadVerticalResolution : DisplayResolutionBase
-    {
-        public IpadVerticalResolution() : base("/resolutions/ipadvertical", 768, 1024)
-        {
-        }
-    }
+    ///// <summary>
+    ///// Defines resolution for a vertical iPad
+    ///// </summary>
+    //public class IpadVerticalResolution : DisplayResolutionBase
+    //{
+    //    public IpadVerticalResolution() : base("/resolutions/ipadvertical", 768, 1024)
+    //    {
+    //    }
+    //}
 
     /// <summary>
     /// Defines resolution for a vertical iPad

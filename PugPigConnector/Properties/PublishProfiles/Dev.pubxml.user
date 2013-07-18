@@ -35,7 +35,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/06/2013 16:16:50</publishTime>
     </File>
     <File Include="bin/PugPigConnector.dll">
-      <publishTime>07/16/2013 17:07:12</publishTime>
+      <publishTime>07/17/2013 15:40:30</publishTime>
     </File>
     <File Include="css/agileMkt.css">
       <publishTime>04/10/2013 14:16:08</publishTime>
@@ -125,7 +125,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/16/2013 15:16:24</publishTime>
     </File>
     <File Include="Resources/LanguageFiles/Channels.xml">
-      <publishTime>05/22/2013 10:22:59</publishTime>
+      <publishTime>07/17/2013 15:38:01</publishTime>
     </File>
     <File Include="Resources/LanguageFiles/_ReadMe.txt">
       <publishTime>10/30/2012 18:36:14</publishTime>
@@ -223,6 +223,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Pages/NovartisContentPageTemplate.aspx">
       <publishTime>07/15/2013 17:45:21</publishTime>
     </File>
+    <File Include="Views/Pages/NovartisContentsPageTemplate.aspx">
+      <publishTime>07/17/2013 16:39:05</publishTime>
+    </File>
     <File Include="Views/Pages/NovartisCoverPageTemplate.aspx">
       <publishTime>07/15/2013 16:01:20</publishTime>
     </File>
@@ -230,16 +233,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2013 16:24:28</publishTime>
     </File>
     <File Include="Views/Pages/NovartisNoMainImageTemplate.aspx">
-      <publishTime>07/16/2013 17:01:41</publishTime>
+      <publishTime>07/17/2013 16:45:44</publishTime>
     </File>
     <File Include="Views/Pages/NovartisScrollingHeroSideBarTemplate.aspx">
-      <publishTime>07/16/2013 16:58:23</publishTime>
+      <publishTime>07/17/2013 16:47:41</publishTime>
     </File>
     <File Include="Views/Pages/NovartisScrollingLargeImageTemplate.aspx">
-      <publishTime>07/16/2013 16:30:39</publishTime>
+      <publishTime>07/17/2013 17:20:09</publishTime>
     </File>
     <File Include="Views/Pages/NovartisSegmentedColumnedTemplate.aspx">
-      <publishTime>07/16/2013 16:26:41</publishTime>
+      <publishTime>07/17/2013 16:52:31</publishTime>
+    </File>
+    <File Include="Views/Pages/NovartisStartPageTemplate.aspx">
+      <publishTime>07/17/2013 12:01:14</publishTime>
     </File>
     <File Include="Views/Pages/ProductPageTemplate.aspx">
       <publishTime>04/23/2013 17:10:38</publishTime>
@@ -299,7 +305,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/16/2013 14:33:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/16/2013 17:09:39</publishTime>
+      <publishTime>07/17/2013 17:20:39</publishTime>
     </File>
     <File Include="XSLT/Edition.xslt">
       <publishTime>04/08/2013 11:03:05</publishTime>
