@@ -1,0 +1,19 @@
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:opds="http://opds-spec.org/2010/catalog" xmlns:app="http://www.w3.org/2007/app">
+  <id>2bdcd998-8eb7-4f14-ae10-e06e08109903</id>
+  <link rel="self" type="application/atom+xml;profile=opds-catalog;kind=acquisition" href="http://vtuk003:37003/Editions/Editions.xml" />
+  <title>Editions</title>
+  <updated>2013-07-31T10:55:00.0000000</updated>
+  <entry>
+    <title>July</title>
+    <id>e10f504f-3778-4fc3-9690-4c2742b0b89c</id>
+    <updated>2013-07-31T10:55:00.0000000</updated>
+    <author>
+      <name>admin</name>
+    </author>
+    <dcterms:issued>2013-07-01</dcterms:issued>
+    <summary type="text">July</summary>
+    <link rel="http://opds-spec.org/image" type="image/jpg" href="http://vtuk003:37003/Global/July.jpg" />
+    <link rel="http://opds-spec.org/acquisition" type="application/atom+xml" href="http://vtuk003:37003/Editions/July/July.xml" />
+    <link rel="alternate" type="application/atom+xml" href="http://vtuk003:37003/Editions/July/July.xml" />
+  </entry>
+</feed>

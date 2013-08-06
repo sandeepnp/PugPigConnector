@@ -1,0 +1,228 @@
+* {
+  margin:0;
+  padding:0;
+  line-height:25px;
+  -webkit-text-size-adjust:100%;
+}
+
+body {
+  background-image:-webkit-gradient(linear, left top, left bottom, from(teal), to(teal));
+  background-position:0px 65px;
+  background-size:10px 10px;
+  background-repeat:repeat-x;
+}
+
+header h1 {
+  position:absolute;
+  top:20px;
+  padding:0;
+  background-color:white;
+  text-transform:uppercase;
+  font-weight:normal;
+  font-size:30px;
+  font-family:"Trebuchet MS";
+  line-height:27px;
+  -webkit-text-size-adjust:none;
+}
+
+article h1 {
+  position:relative;
+  margin-bottom:25px;
+  font-size:22px;
+}
+article h1:after {
+  position:absolute;
+  bottom:-10px;
+  left:0;
+  display:block;
+  width:100%;
+  height:2px;
+  background-color:black;
+  content:'';
+}
+
+p {
+  text-indent:2em;
+}
+p:first-of-type {
+  text-indent:0;
+}
+
+figure {
+  display:block;
+  width:100%;
+}
+
+figure div {
+  position:absolute;
+  overflow:hidden;
+  width:100%;
+  height:100%;
+}
+figure img {
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+figcaption {
+  position:absolute;
+  bottom:0px;
+  left:0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding:5px 10px;
+  width:100%;
+  background-color: rgba(0,0,0,0.5);
+  color:#eee;
+}
+
+article {
+  position:absolute;
+  top:0;
+  left:0;
+  -webkit-box-sizing:border-box;
+  height:300px;
+  border:0px solid transparent;
+  border-top-width:100px;
+  border-bottom-width:25px;
+}
+
+@media (max-device-height:480px) {
+  body {
+    background-position:0px 8px;
+    background-size:10px 20px;
+  }
+  article {
+    border-top-width:40px;
+    border-bottom-width:10px;
+  }
+  header h1 {
+    top:8px;
+    padding:0 10px;
+    font-size:20px;
+    line-height:20px;
+  }
+}
+
+/* iPhone portrait */
+@media (max-width:320px) {
+  header h1 { 
+    left:25px;
+    width:auto;
+  }  
+  article {
+    clear:both;
+    padding:0 25px;
+    width:100%;
+  }
+  figure {
+    position:relative;
+    margin-bottom:20px;
+    height:100%;
+  }
+}
+
+/* iPhone landscape */
+@media only screen and (min-width:321px) and (max-width:700px) {
+  header h1 { 
+    left:25px;
+  }  
+  article { 
+    clear:both;
+    padding:0 25px;
+    width:100%;
+  }
+  article h1 {
+    float:left;
+    width:35%;
+  }
+  figure {
+    position:relative;
+    float:left;
+    margin:0 5% 25px 0;
+    width:60%;
+    height:auto;
+  }
+  figure div {
+    position:static;
+    float:left;
+    width:100%;
+    height:auto;
+  }
+}
+
+/* iPad portrait */
+@media only screen and (min-width:701px) and (max-width:800px) {
+  header h1 { 
+    left:22px;
+  }  
+  article {
+    padding:0 22px;
+    width:100%;
+    height:auto;
+  }
+  figure {
+    position:relative;
+    margin-bottom:25px;
+    height:600px;
+  }
+}
+
+/* iPad landscape */
+@media only screen and (min-width:801px) and (max-width:1600px) {
+  header h1 { 
+    left:22px;
+  }  
+  article { 
+    position:static;
+    clear:both;
+    padding:0 22px;
+    width:100%;
+    height:auto;
+    /* background:yellow; */
+  }
+  article h1 {
+    float:left;
+    width:37.5%;
+  }
+/* article h1:after {
+    width:220px; */
+  figure {
+    position:relative;
+    float:left;
+    margin:0 2.5% 22px 0;
+    width:60%;
+    height:auto;
+  }
+  figure div {
+    position:static;
+    float:left;
+    width:100%;
+    height:auto;
+  }
+}
+
+
+body.section-a {
+  background-image:-webkit-gradient(linear, left top, left bottom, from(orange), to(orange));
+}
+body.section-b {
+  background-image:-webkit-gradient(linear, left top, left bottom, from(silver), to(silver));
+}
+body.section-c {
+  background-image:-webkit-gradient(linear, left top, left bottom, from(teal), to(teal));
+}
+body.section-d {
+  background-image:-webkit-gradient(linear, left top, left bottom, from(yellowgreen), to(yellowgreen));
+}
+body.section-e {
+  background-image:-webkit-gradient(linear, left top, left bottom, from(thistle), to(thistle));
+}
+figure.gallery{
+  display:none;
+}
+
+figure.gallery{
+  display:none;
+}

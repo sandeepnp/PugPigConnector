@@ -1,0 +1,136 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media (max-width:480px) {
+  body {
+    background-size:10px 20px;
+    background-position:0px 8px;
+  }
+  article {
+    border-top-width:40px;
+    border-bottom-width:10px;
+  }
+  header {
+  	height: 23px;
+  	}
+  header h1 {
+  	 font-size: 16px;
+    padding: 0 15px;
+  	}
+  article h1, #overview h1 {
+  	font-size:20px;
+  	margin-bottom: 0;
+  	line-height: 20px;
+  	}
+	.small-article {
+  		padding: 0;
+  		}
+	article {
+    	padding:0 12px;
+  }
+
+  p {
+  		font-size: 0.9em;
+    	line-height: 1.4em;
+    }
+  .topstories h2 {
+    font-size:14px;
+  }
+  .sections li {
+    margin-bottom:28px;
+  }
+  .sections li a {
+    font-size:28px;
+  }
+  figure {
+    height:100%;
+  }
+  figure div {
+    width:228px;
+  }
+   ul {
+  }
+  .topstories ul {
+  }
+  .topstories li {
+  
+    width: 50%
+    }
+  .sections ul {
+    bottom:0px;
+  }
+}
+
+@media (min-width:481px) and (max-width:768px) {
+
+  
+header { 
+  height:30px;
+  display:block;
+  }
+header h1 {
+  font-size: 18px;
+    padding: 3px 15px 3px 27px;
+  }
+ 
+  article h1, #overview h1 {
+  	font-size: 26px;
+  	margin-bottom: 5px;
+  	line-height: 30px;
+  }
+  #overview h1 {
+  	margin: 5px 0;
+  	}
+  figure {
+  	height:50%;
+  	overflow:hidden;
+}
+  h1 {
+    -webkit-box-sizing:border-box;
+    border:0 solid transparent;
+    text-align:center;
+  }
+  ul {
+  }
+  .topstories ul {
+  }
+  .topstories li {
+  
+    width: 33.33333333%
+    }
+  .sections ul {
+    bottom:16px;
+  }
+  .topstories article {
+  }  
+  
+  article {
+    height:100%;
+    display:block;
+  }
+    .articles-list p {
+    line-height: 18px;
+    font-size:14px;
+}
+}
+@media (min-width:769px) {
+header { 
+  height:40px;
+  display:block;
+  }
+header h1 {
+    font-size: 25px;
+    padding: 8px;
+}
+p {
+	font-size: 14px;
+}
+ 
+  article h1, #overview h1 {
+  	font-size: 34px;
+  	line-height: 34px;
+  }
+  .articles-list p {
+    line-height: 20px;
+}
+}
+  
+ 

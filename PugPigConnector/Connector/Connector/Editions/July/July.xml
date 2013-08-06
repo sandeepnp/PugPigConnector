@@ -1,0 +1,34 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>e10f504f-3778-4fc3-9690-4c2742b0b89c</id>
+  <link rel="self" type="application/atom+xml" href="http://vtuk003:37003/Editions/July/July.xml" />
+  <title type="text">July</title>
+  <subtitle type="text">July</subtitle>
+  <author>
+    <name>admin</name>
+  </author>
+  <updated>2013-07-31T10:55:00.0000000</updated>
+  <entry>
+    <id>6acc5365-5770-4050-9f8f-e89bdb016c8b</id>
+    <link rel="alternate" type="text/html" href="First.html" />
+    <link rel="related" type="text/cache-manifest" href="July.manifest" />
+    <title type="text">First</title>
+    <summary type="text">First</summary>
+    <updated>2013-07-31T11:17:00.0000000</updated>
+  </entry>
+  <entry>
+    <id>612ecaaf-c7f6-41ff-82ea-5070179f3cfd</id>
+    <link rel="alternate" type="text/html" href="Second.html" />
+    <link rel="related" type="text/cache-manifest" href="July.manifest" />
+    <title type="text">Second</title>
+    <summary type="text">Second</summary>
+    <updated>2013-07-31T11:18:00.0000000</updated>
+  </entry>
+  <entry>
+    <id>c8bfde19-db08-465d-8515-050557704527</id>
+    <link rel="alternate" type="text/html" href="Test.html" />
+    <link rel="related" type="text/cache-manifest" href="July.manifest" />
+    <title type="text">Test</title>
+    <summary type="text">Test</summary>
+    <updated>2013-08-06T17:14:08.0000000</updated>
+  </entry>
+</feed>

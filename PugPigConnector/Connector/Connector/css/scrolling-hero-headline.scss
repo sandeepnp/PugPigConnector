@@ -1,0 +1,130 @@
+* {
+  margin:0;
+  padding:0;
+  line-height:1.5em;
+  -webkit-text-size-adjust:100%;
+  font-family:Georgia, serif;
+}
+
+header h1 {
+  position:absolute;
+  top:20px;
+  left:22px;
+  padding:6px 12px;
+  background-color:rgba(255,255,255,0.5);
+  text-transform:uppercase;
+  font-weight:normal;
+  font-size:30px;
+  -webkit-text-size-adjust:none;
+  font-family:Helvetica, sans-serif;
+  z-index:2;
+}
+
+article {
+  top:0;
+  left:0;
+  -webkit-box-sizing:border-box;
+  h1 {
+    position:relative;
+    font-size:42px;
+    line-height:50px;
+    font-family:Helvetica, sans-serif;
+  }
+}
+section.image_wrap {
+  position:relative;
+  header {
+    width:80%;
+    padding:0;
+    position:absolute;
+    bottom:0;
+    left:0;
+    h1 {
+      left:0;
+      top:auto;
+      color:#ccc;
+      background:none;
+      padding:6px 22px;
+    }
+    p.byline {
+        background-color:rgba(255,255,255,0.3);
+        margin-bottom:0;
+        padding:6px 12px;
+        color:#ccc;
+        text-align:right; 
+        font-style:italic;
+    }
+  }
+}
+
+section.copy {
+  padding: 22px ;
+  p:first-of-type:first-letter { 
+    float:left; 
+    font-size:7em; 
+    line-height: 0.8em; 
+    color:#333; 
+    padding-right:20px; 
+    font-style:italic; 
+    font-weight: 200;
+  }
+  p {
+    text-indent:2em;
+    font-size:1.1rem;
+    max-width: 70%;
+    float:right;
+    &:first-of-type {
+      text-indent:0;
+    }
+  }
+  figure {
+    margin:12px 0;
+    clear:both;
+    float:left;
+  }
+}
+
+figure {
+  display:block;
+  width:100%;
+  img {
+    display:block;
+    width:100%;
+    height:auto;
+  }
+  &.gallery{
+    display:none;
+  }
+  &.left {
+    max-width:70%;
+  }
+}
+
+figcaption {
+  position:absolute;
+  bottom:0px;
+  left:0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding:5px 10px;
+  width:100%;
+  background-color: rgba(0,0,0,0.5);
+  color:#eee;
+}
+
+@media screen and (max-width:480px) {
+
+  section.image_wrap header {
+    position:relative;
+    width:100%;
+    h1 {
+      font-size:29px;
+      color:black;
+    }
+    p.byline {
+      color:black;
+    }
+  }
+  section.copy p, figure.left {max-width:100%}
+}
+

@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body.news header {
+  color: #b40a0a;
+}
+
+body.politics header {
+  color: #b4550a;
+}
+
+body.travel header {
+  color: #12910a;
+}
+
+header {
+  max-width: 40%;
+  float: left;
+  margin-left: 12px;
+}
+
+header h1 {
+  position: relative;
+  top: 8px;
+  padding: 12px 0 24px 0;
+  text-transform: uppercase;
+  font-family: arial;
+  font-weight: bold;
+  -webkit-text-size-adjust: none;
+  font-size: 1rem;
+  z-index: 4;
+}
+
+div.clearfix {
+  width: 100%;
+  float: none;
+  clear: both;
+}
+
+div.container {
+  width: 94%;
+  margin: 0 auto;
+}
+
+h2.filter {
+  font-family: arial;
+  font-style: narrow;
+}
+
+ul.option-set {
+  list-style-type: none;
+  float: left;
+  margin-left: -2px;
+}
+ul.option-set li {
+  float: left;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  font-family: arial;
+  font-size: 20px;
+}
+ul.option-set li a {
+  text-decoration: none;
+}
+
+a {
+  color: #333;
+}
+
+section.news p.cat, section.news ul.option-set li.news a {
+  color: #b40a0a;
+}
+
+section.politics p.cat, section.politics ul.option-set li.politics a {
+  color: #b4550a;
+}
+
+section.travel p.cat, section.travel ul.option-set li.travel a {
+  color: #12910a;
+}
+
+section.letters p.cat {
+  color: #fe521b;
+}
+
+li.news a {
+  color: #b40a0a;
+}
+
+li.politics a {
+  color: #b4550a;
+}
+
+li.travel a {
+  color: #12910a;
+}
+
+section {
+  width: 242px;
+  margin: 14px 7px;
+  height: 180px;
+  float: left;
+  position: relative;
+  background-color: #eee;
+  overflow: hidden;
+}
+section img {
+  width: 270px;
+}
+
+section a {
+  width: 512px;
+  height: 383px;
+}
+
+section h1 {
+  display: none;
+}
+
+section.letters h1 {
+  display: block;
+  font-family: arial;
+  text-transform: uppercase;
+  padding: 35px 25px;
+}
+
+section p.cat {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: white;
+  padding: 3px;
+  font-family: arial;
+  text-decoration: none;
+}
+
+section a {
+  text-decoration: none;
+}
+
+section img {
+  left: 0;
+}
+
+div.logo {
+  float: right;
+  width: auto;
+  max-width: 40%;
+  margin: 12px 3%;
+}
+div.logo img {
+  float: right;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  section {
+    width: 46%;
+    height: auto;
+  }
+  section img {
+    width: 100%;
+    height: auto;
+  }
+
+  section.letters h1 {
+    display: block;
+    font-family: arial;
+    text-transform: uppercase;
+    padding: 35px 25px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 320px) {
+  section {
+    width: 45%;
+    height: auto;
+  }
+  section img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 480px) {
+  ul.option-set li {
+    font-size: 16px;
+    padding: 6px;
+  }
+}
