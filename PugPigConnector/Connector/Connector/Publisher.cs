@@ -17,9 +17,13 @@ namespace Connector
 {
     public class Publisher
     {
+        #region Instance Variables
+
         private PageData currentPage;
         private PageData editionListPage;
         private HttpRequest request;
+
+        #endregion
 
         /// <summary>
         /// Defines the file types that should be included in the Manifest file when it is
@@ -28,17 +32,54 @@ namespace Connector
         /// </summary>
         const string FILE_TYPES = "*.js;*.css;*.gif;*.png;*.jp*g;*.ico";
 
-        
-                
+        #region Public Methods
+
         public Publisher()
-        {
-            //var pageBase = HttpContext.Current.Handler as PageBase;
+        {            
             currentPage = ((PageBase)HttpContext.Current.Handler).CurrentPage;
             editionListPage = DataFactory.Instance.GetPage(currentPage.ParentLink);
             request = HttpContext.Current.Request;            
         }
 
-        public void GenerateEditionFeed(string publishLocation)
+        public void PublishEdition()
+        {
+            GenerateEditionPages();
+
+            GenerateEditionFeed();
+
+            GenerateManifest();
+
+            GenerateEditionListFeed();
+        }
+
+        public void GenerateEditionPages()
+        {
+            // Ensure there exists a location to publish the edition
+            string publishLocation = Common.GetEditionFolder(currentPage.Name);
+
+            if (!string.IsNullOrEmpty(publishLocation))
+            {
+                PageDataCollection editionPages = DataFactory.Instance.GetChildren(currentPage.PageLink);
+
+                if (editionPages != null)
+                {
+                    foreach (PageData editionPage in editionPages)
+                    {
+                        string pageURL = Common.GetFriendlyURL(editionPage);
+
+                        string pageContent = GetPageContent(pageURL);
+
+                        using (StreamWriter streamWriter = new StreamWriter(publishLocation + "\\" + editionPage.Name + ".html"))
+                        {
+                            streamWriter.Write(pageContent);
+                            streamWriter.Close();
+                        }
+                    }
+                }
+            }
+        }
+
+        public void GenerateEditionFeed()
         {
             XmlDocument doc = new XmlDocument();
 
@@ -72,7 +113,7 @@ namespace Connector
             editionUpdatedNode.InnerText = currentPage.StartPublish.ToString("o");
             outerNode.AppendChild(editionUpdatedNode);
 
-            List<PageData> childPages = GetAllChildrenFilteredByPageType(currentPage);
+            PageDataCollection childPages = DataFactory.Instance.GetChildren(currentPage.PageLink);
 
             foreach (PageData childPage in childPages)
             {
@@ -107,10 +148,71 @@ namespace Connector
                 outerNode.AppendChild(itemNode);
             }
 
-            ApplyEditionTransform(doc.InnerXml, publishLocation);
+            ApplyEditionTransform(doc.InnerXml);
         }
 
-        private void ApplyEditionTransform(string feedXml, string publishLocation)
+        public void GenerateManifest()
+        {
+            var stringBuilder = new StringBuilder();
+            stringBuilder.Append("CACHE MANIFEST");
+            stringBuilder.AppendLine();
+
+            stringBuilder.Append(string.Format("# This file was generated at {0} {1}", DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString()));
+            stringBuilder.AppendLine();
+            stringBuilder.AppendLine();
+
+            stringBuilder.Append("CACHE:");
+            stringBuilder.AppendLine();
+            stringBuilder.AppendLine();
+
+            // List site content
+            stringBuilder.Append(ListSiteContent());
+            stringBuilder.AppendLine();
+
+            //List page properties
+            stringBuilder.Append(ListPageContent());
+
+            using (StreamWriter streamWriter = new StreamWriter(Common.GetEditionFolder(currentPage.Name) + "\\" + currentPage.Name + ".manifest"))
+            {
+                streamWriter.Write(stringBuilder.ToString());
+                streamWriter.Close();
+            }
+        }
+
+        public void GenerateEditionListFeed()
+        {
+            PageDataCollection editions;
+
+            // Get siblings of the current edition page
+            if (currentPage.ParentLink != PageReference.EmptyReference)
+            {
+                editions = DataFactory.Instance.GetChildren(currentPage.ParentLink);
+                ProcessEditionListFeed(editions);
+            }
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private static string GetPageContent(string url)
+        {
+            string result = "";
+
+            System.Net.WebRequest objRequest = System.Net.HttpWebRequest.Create(url.Trim());
+
+            using (StreamReader sr = new StreamReader(objRequest.GetResponse().GetResponseStream()))
+            {
+                result = sr.ReadToEnd();
+                sr.Close();
+
+                return Common.HtmlAppRelativeUrlsToAbsoluteUrls(result);
+            }
+
+            return result;
+        }
+
+        private void ApplyEditionTransform(string feedXml)
         {
             // Transform XML
             XslCompiledTransform transformer = new XslCompiledTransform();
@@ -126,54 +228,26 @@ namespace Connector
             XmlDocument xmlDocument = new XmlDocument();
 
             xmlDocument.LoadXml(stringWriter.ToString());
-            xmlDocument.Save(publishLocation + "\\" + currentPage.Name + ".xml");
+            xmlDocument.Save(Common.GetEditionFolder(currentPage.Name) + "\\" + currentPage.Name + ".xml");
         }
 
-        private List<PageData> GetAllChildrenFilteredByPageType(PageData parent)
-        {
-            List<PageData> allChildren = new List<PageData>();
+        //private List<PageData> GetAllChildrenFilteredByPageType(PageData parent)
+        //{
+        //    List<PageData> allChildren = new List<PageData>();
 
-            PageDataCollection children = DataFactory.Instance.GetChildren(parent.PageLink);
+        //    PageDataCollection children = DataFactory.Instance.GetChildren(parent.PageLink);
 
-            foreach (PageData child in children)
-            {
-                allChildren.Add(child);
+        //    foreach (PageData child in children)
+        //    {
+        //        allChildren.Add(child);
 
-                if (DataFactory.Instance.GetChildren(child.PageLink).Count > 0)
-                {
-                    allChildren.AddRange(GetAllChildrenFilteredByPageType(child));
-                }
-            }
-            return allChildren;
-        }
-
-        public void GenerateManifest(string publishLocation)
-        {            
-            var stringBuilder = new StringBuilder();
-            stringBuilder.Append("CACHE MANIFEST");
-            stringBuilder.AppendLine();
-
-            stringBuilder.Append(string.Format("# This file was generated at {0} {1}", DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString()));
-            stringBuilder.AppendLine();
-            stringBuilder.AppendLine();
-
-            stringBuilder.Append("CACHE:");
-            stringBuilder.AppendLine();
-            stringBuilder.AppendLine();
-
-            // List site content
-            stringBuilder.Append(ListSiteContent());                        
-            stringBuilder.AppendLine();
-
-            //List page properties
-            stringBuilder.Append(ListPageContent());
-
-            using (StreamWriter streamWriter = new StreamWriter(publishLocation + "\\" + currentPage.Name + ".manifest"))
-            {
-                streamWriter.Write(stringBuilder.ToString());
-                streamWriter.Close();
-            }
-        }
+        //        if (DataFactory.Instance.GetChildren(child.PageLink).Count > 0)
+        //        {
+        //            allChildren.AddRange(GetAllChildrenFilteredByPageType(child));
+        //        }
+        //    }
+        //    return allChildren;
+        //}               
 
         /// <summary>
         /// Creates a list of properties from all pages within an edition
@@ -239,19 +313,7 @@ namespace Connector
             }
 
             return stringBuilder.ToString();
-        }
-
-        public void GenerateEditionListFeed()
-        {
-            PageDataCollection editions;
-
-            // Get siblings of the current edition page
-            if (currentPage.ParentLink != PageReference.EmptyReference)
-            {
-                editions = DataFactory.Instance.GetChildren(currentPage.ParentLink);
-                ProcessEditionListFeed(editions);
-            }
-        }
+        }        
 
         private void ProcessEditionListFeed(PageDataCollection editions)
         {
@@ -351,5 +413,7 @@ namespace Connector
             xmlDocument.LoadXml(stringWriter.ToString());
             xmlDocument.Save(Common.GetEditionFolder(string.Empty) + "\\" + editionListPage.Name + ".xml");
         }
+
+        #endregion
     }
 }

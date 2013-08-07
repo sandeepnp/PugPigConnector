@@ -5,7 +5,7 @@ using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
 
-namespace PugPigConnector.Models.Pages
+namespace Connector.Models.Pages
 {
     [ContentType(DisplayName = "Novartis No Main Image", Description = "Novartis No Main Image")]
     public class NovartisNoMainImage : PageData

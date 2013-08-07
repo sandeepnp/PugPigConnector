@@ -5,7 +5,7 @@ using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
 
-namespace PugPigConnector.Models.Pages
+namespace Connector.Models.Pages
 {
     [ContentType(DisplayName = "Novartis Start Page", Description = "Novartis Start Page")]
     public class NovartisStartPage : PageData

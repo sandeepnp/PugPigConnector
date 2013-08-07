@@ -22,15 +22,7 @@ namespace Connector
             UrlBuilder pageURLBuilder = new UrlBuilder(pageData.LinkURL);
             EPiServer.Global.UrlRewriteProvider.ConvertToExternal(pageURLBuilder, pageData.PageLink, UTF8Encoding.UTF8);
 
-            string friendlyURL = string.Empty;
-
-            if (ConfigurationManager.AppSettings["SiteRoot"] != null)
-            {
-                friendlyURL = ConfigurationManager.AppSettings["SiteRoot"] + pageURLBuilder.Path;
-                friendlyURL = friendlyURL.Substring(0, (friendlyURL.Length - 1));
-            }
-
-            return friendlyURL;
+            return GetSiteRoot() + pageURLBuilder.Path;
         }
 
         public static bool IsEditionPage(PageData pageData)
@@ -43,72 +35,60 @@ namespace Connector
             return false;
         }
 
-        public static void Publish()
-        {
-            // Publish Edition List feed
-            //PublishEditionListFeed();
-
-            // Publish Edition feed
-            PublishEditionFeed();          
-            
-        }
-
-        //private static void PublishEditionListFeed()
+        //public static void Publish()
         //{
-
+        //    PublishEdition();            
         //}
 
-        private static void PublishEditionFeed()
-        {
-           var pageBase = HttpContext.Current.Handler as PageBase;
+        //private static void PublishEdition()
+        //{
+        //   var pageBase = HttpContext.Current.Handler as PageBase;
 
-            if (pageBase != null)
-            {
-                PageData page = pageBase.CurrentPage;
+        //    if (pageBase != null)
+        //    {
+        //        PageData page = pageBase.CurrentPage;
 
-                // Ensure there exists a location to publish the edition
-                string publishLocation = GetEditionFolder(page.Name);
+        //        // Ensure there exists a location to publish the edition
+        //        string publishLocation = GetEditionFolder(page.Name);
 
-                if (!string.IsNullOrEmpty(publishLocation))
-                {
-                    GenerateEditionFeed(publishLocation);
-                    PublishEditionPages(page, publishLocation);
-                    //PublishManifest();
-                }
-             }
-        }
+        //        if (!string.IsNullOrEmpty(publishLocation))
+        //        {
+        //            GenerateEditionFeed(publishLocation);
+        //            PublishEditionPages(page, publishLocation);                    
+        //        }
+        //     }
+        //}
 
-        private static void PublishEditionPages(PageData page, string publishLocation)
-        {
-            PageDataCollection editionPages = DataFactory.Instance.GetChildren(page.PageLink);
+        //private static void PublishEditionPages(PageData page, string publishLocation)
+        //{
+        //    PageDataCollection editionPages = DataFactory.Instance.GetChildren(page.PageLink);
 
-            if (editionPages != null)
-            {
-                foreach (PageData editionPage in editionPages)
-                {
-                    string pageURL = Common.GetFriendlyURL(editionPage);
+        //    if (editionPages != null)
+        //    {
+        //        foreach (PageData editionPage in editionPages)
+        //        {
+        //            string pageURL = Common.GetFriendlyURL(editionPage);
                     
-                    string pageContent = GetPageContent(pageURL);
+        //            string pageContent = GetPageContent(pageURL);
 
-                    using (StreamWriter streamWriter = new StreamWriter(publishLocation + "\\" + editionPage.Name + ".html"))
-                    {
-                        streamWriter.Write(pageContent);
-                        streamWriter.Close();
-                    }
-                }
-            }
-        }
+        //            using (StreamWriter streamWriter = new StreamWriter(publishLocation + "\\" + editionPage.Name + ".html"))
+        //            {
+        //                streamWriter.Write(pageContent);
+        //                streamWriter.Close();
+        //            }
+        //        }
+        //    }
+        //}
 
-        private static void GenerateEditionFeed(string publishLocation)
-        {
-            var publisher = new Publisher();
+        //private static void GenerateEditionFeed(string publishLocation)
+        //{
+        //    var publisher = new Publisher();
 
-            publisher.GenerateEditionFeed(publishLocation);
-            publisher.GenerateManifest(publishLocation);
-            publisher.GenerateEditionListFeed();
-        }
-
-        
+        //    publisher.GenerateEditionFeed(publishLocation);
+        //    publisher.GenerateManifest(publishLocation);
+        //    publisher.GenerateEditionListFeed();
+        //}
+                
         /// <summary>
         /// Checks if edition folder exists, creates it if it does not.
         /// </summary>
@@ -133,24 +113,92 @@ namespace Connector
             return folderPath;
         }
 
-        private static string GetPageContent(string url)
+        //private static string GetPageContent(string url)
+        //{
+        //    string result = "";
+
+        //    System.Net.WebRequest objRequest = System.Net.HttpWebRequest.Create(url.Trim());
+
+        //    using (StreamReader sr = new StreamReader(objRequest.GetResponse().GetResponseStream()))
+        //    {
+        //        result = sr.ReadToEnd();
+        //        sr.Close();
+
+        //        return HtmlAppRelativeUrlsToAbsoluteUrls(result);
+        //    }
+
+        //    return result;
+        //}
+
+        //private static string HtmlAppRelativeUrlsToAbsoluteUrls(this string html)
+        //{
+        //    if (string.IsNullOrEmpty(html))
+        //        return html;
+
+        //    const string htmlPattern = "(?<attrib>\\shref|\\ssrc|\\sbackground)\\s*?=\\s*?"
+        //                              + "(?<delim1>[\"'\\\\]{0,2})(?!#|http|ftp|mailto|javascript)"
+        //                              + "/(?<url>[^\"'>\\\\]+)(?<delim2>[\"'\\\\]{0,2})";
+
+        //    var htmlRegex = new Regex(htmlPattern, RegexOptions.IgnoreCase | RegexOptions.Multiline);
+        //    html = htmlRegex.Replace(html, m => htmlRegex.Replace(m.Value, "${attrib}=${delim1}" + ("~/" + m.Groups["url"].Value).ToAbsoluteUrl() + "${delim2}"));
+
+        //    const string cssPattern = "@import\\s+?(url)*['\"(]{1,2}"
+        //                              + "(?!http)\\s*/(?<url>[^\"')]+)['\")]{1,2}";
+
+        //    var cssRegex = new Regex(cssPattern, RegexOptions.IgnoreCase | RegexOptions.Multiline);
+        //    html = cssRegex.Replace(html, m => cssRegex.Replace(m.Value, "@import url(" + ("~/" + m.Groups["url"].Value).ToAbsoluteUrl() + ")"));
+
+        //    return html;
+        //}
+
+        //private static string ToAbsoluteUrl(this string relativeUrl)
+        //{
+        //    if (string.IsNullOrEmpty(relativeUrl))
+        //        return relativeUrl;
+
+        //    if (HttpContext.Current == null)
+        //        return relativeUrl;
+
+        //    if (relativeUrl.StartsWith("/"))
+        //        relativeUrl = relativeUrl.Insert(0, "~");
+        //    if (!relativeUrl.StartsWith("~/"))
+        //        relativeUrl = relativeUrl.Insert(0, "~/");
+
+        //    var url = HttpContext.Current.Request.Url;
+        //    var port = url.Port != 80 ? (":" + url.Port) : String.Empty;
+
+        //    return string.Format("{0}://{1}{2}{3}", url.Scheme, url.Host, port, VirtualPathUtility.ToAbsolute(relativeUrl));
+        //}
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>A virtual path for the root publishing folder</returns>
+        public static string GetRootPublishLocationPath()
         {
-            string result = "";
+            string host = string.Empty;
+            string publishLocation = ConfigurationManager.AppSettings["RootPublishLocation"];
 
-            System.Net.WebRequest objRequest = System.Net.HttpWebRequest.Create(url.Trim());
-
-            using (StreamReader sr = new StreamReader(objRequest.GetResponse().GetResponseStream()))
+            if (Directory.Exists(HttpContext.Current.Server.MapPath("~") + "\\" + publishLocation))
             {
-                result = sr.ReadToEnd();
-                sr.Close();
+                host = string.Format("{0}/{1}", GetSiteRoot(), publishLocation);;
+            }            
 
-                return HtmlAppRelativeUrlsToAbsoluteUrls(result);
-            }
-
-            return result;
+            return host;
         }
 
-        private static string HtmlAppRelativeUrlsToAbsoluteUrls(this string html)
+        private static string GetSiteRoot()
+        {
+            string host = string.Empty;
+            var url = HttpContext.Current.Request.Url;
+            var port = url.Port != DEFAULT_PORT ? (":" + url.Port) : String.Empty;
+
+            host = string.Format("{0}://{1}{2}", url.Scheme, url.Host, port);    
+
+            return host;
+        }
+
+        public static string HtmlAppRelativeUrlsToAbsoluteUrls(this string html)
         {
             if (string.IsNullOrEmpty(html))
                 return html;
@@ -171,7 +219,7 @@ namespace Connector
             return html;
         }
 
-        private static string ToAbsoluteUrl(this string relativeUrl)
+        public static string ToAbsoluteUrl(this string relativeUrl)
         {
             if (string.IsNullOrEmpty(relativeUrl))
                 return relativeUrl;
@@ -188,26 +236,6 @@ namespace Connector
             var port = url.Port != 80 ? (":" + url.Port) : String.Empty;
 
             return string.Format("{0}://{1}{2}{3}", url.Scheme, url.Host, port, VirtualPathUtility.ToAbsolute(relativeUrl));
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns>A virtual path for the root publishing folder</returns>
-        public static string GetRootPublishLocationPath()
-        {
-            string host = string.Empty;
-            var url = HttpContext.Current.Request.Url;
-            var port = url.Port != DEFAULT_PORT ? (":" + url.Port) : String.Empty;            
-
-            string publishLocation = ConfigurationManager.AppSettings["RootPublishLocation"];
-
-            if (Directory.Exists(HttpContext.Current.Server.MapPath("~") + "\\" + publishLocation))
-            {
-                host = string.Format("{0}://{1}{2}/{3}", url.Scheme, url.Host, port, publishLocation);;
-            }            
-
-            return host;
         }
     }
 }

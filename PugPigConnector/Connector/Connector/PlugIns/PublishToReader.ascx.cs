@@ -53,7 +53,7 @@ namespace Connector.PlugIns
 
         protected void publishButton_Click(object sender, EventArgs e)
         {
-            Common.Publish();
+            //Common.Publish();
         }
 
 

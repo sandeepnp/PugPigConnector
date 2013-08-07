@@ -5,7 +5,7 @@ using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
 
-namespace PugPigConnector.Models.Pages
+namespace Connector.Models.Pages
 {
     [ContentType(DisplayName = "Novartis Segmented Columned", Description = "Novartis Segmented Columned")]
     public class NovartisSegmentedColumned : PageData
