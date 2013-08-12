@@ -6,9 +6,9 @@
         <title>Edition Page</title>
     </head>
     <body>
-        <form id="form" runat="server">
-          <asp:Button ID="publishButton" Text="Publish this edition" OnClick="publishButton_Click" runat="server" />
-          <asp:Label ID="publishLabel" Text="" runat="server" Visible="false" />
+        <form id="form" runat="server">              
+            <asp:Button ID="publishButton" Text="Publish this edition" OnClick="publishButton_Click" runat="server" />            
+            <asp:Label ID="publishLabel" Text="" runat="server" Visible="false" />          
         </form>
     </body>
 </html>

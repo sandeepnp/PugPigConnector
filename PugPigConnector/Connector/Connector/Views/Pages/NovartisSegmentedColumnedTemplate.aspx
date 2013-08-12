@@ -1,7 +1,7 @@
-﻿<%@ Page Language="c#" Inherits="PugPigConnector.Views.Pages.NovartisSegmentedColumnedTemplate" CodeBehind="NovartisSegmentedColumnedTemplate.aspx.cs" %>
+﻿<%@ Page Language="c#" Inherits="Connector.Views.Pages.NovartisSegmentedColumnedTemplate" CodeBehind="NovartisSegmentedColumnedTemplate.aspx.cs" %>
 
 <!DOCTYPE html>
-<html manifest="/page.manifest?pageId=<%= CurrentPage.PageLink %>">
+<html>
 
     <head id="Head1" runat="server">
       <title>Segmented columned</title>

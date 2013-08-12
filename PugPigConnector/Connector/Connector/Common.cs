@@ -35,59 +35,10 @@ namespace Connector
             return false;
         }
 
-        //public static void Publish()
-        //{
-        //    PublishEdition();            
-        //}
-
-        //private static void PublishEdition()
-        //{
-        //   var pageBase = HttpContext.Current.Handler as PageBase;
-
-        //    if (pageBase != null)
-        //    {
-        //        PageData page = pageBase.CurrentPage;
-
-        //        // Ensure there exists a location to publish the edition
-        //        string publishLocation = GetEditionFolder(page.Name);
-
-        //        if (!string.IsNullOrEmpty(publishLocation))
-        //        {
-        //            GenerateEditionFeed(publishLocation);
-        //            PublishEditionPages(page, publishLocation);                    
-        //        }
-        //     }
-        //}
-
-        //private static void PublishEditionPages(PageData page, string publishLocation)
-        //{
-        //    PageDataCollection editionPages = DataFactory.Instance.GetChildren(page.PageLink);
-
-        //    if (editionPages != null)
-        //    {
-        //        foreach (PageData editionPage in editionPages)
-        //        {
-        //            string pageURL = Common.GetFriendlyURL(editionPage);
-                    
-        //            string pageContent = GetPageContent(pageURL);
-
-        //            using (StreamWriter streamWriter = new StreamWriter(publishLocation + "\\" + editionPage.Name + ".html"))
-        //            {
-        //                streamWriter.Write(pageContent);
-        //                streamWriter.Close();
-        //            }
-        //        }
-        //    }
-        //}
-
-        //private static void GenerateEditionFeed(string publishLocation)
-        //{
-        //    var publisher = new Publisher();
-
-        //    publisher.GenerateEditionFeed(publishLocation);
-        //    publisher.GenerateManifest(publishLocation);
-        //    publisher.GenerateEditionListFeed();
-        //}
+        public static string GetConfigSettingValue(string key)
+        {
+            return ConfigurationManager.AppSettings[key];
+        }
                 
         /// <summary>
         /// Checks if edition folder exists, creates it if it does not.
@@ -111,64 +62,7 @@ namespace Connector
             }
 
             return folderPath;
-        }
-
-        //private static string GetPageContent(string url)
-        //{
-        //    string result = "";
-
-        //    System.Net.WebRequest objRequest = System.Net.HttpWebRequest.Create(url.Trim());
-
-        //    using (StreamReader sr = new StreamReader(objRequest.GetResponse().GetResponseStream()))
-        //    {
-        //        result = sr.ReadToEnd();
-        //        sr.Close();
-
-        //        return HtmlAppRelativeUrlsToAbsoluteUrls(result);
-        //    }
-
-        //    return result;
-        //}
-
-        //private static string HtmlAppRelativeUrlsToAbsoluteUrls(this string html)
-        //{
-        //    if (string.IsNullOrEmpty(html))
-        //        return html;
-
-        //    const string htmlPattern = "(?<attrib>\\shref|\\ssrc|\\sbackground)\\s*?=\\s*?"
-        //                              + "(?<delim1>[\"'\\\\]{0,2})(?!#|http|ftp|mailto|javascript)"
-        //                              + "/(?<url>[^\"'>\\\\]+)(?<delim2>[\"'\\\\]{0,2})";
-
-        //    var htmlRegex = new Regex(htmlPattern, RegexOptions.IgnoreCase | RegexOptions.Multiline);
-        //    html = htmlRegex.Replace(html, m => htmlRegex.Replace(m.Value, "${attrib}=${delim1}" + ("~/" + m.Groups["url"].Value).ToAbsoluteUrl() + "${delim2}"));
-
-        //    const string cssPattern = "@import\\s+?(url)*['\"(]{1,2}"
-        //                              + "(?!http)\\s*/(?<url>[^\"')]+)['\")]{1,2}";
-
-        //    var cssRegex = new Regex(cssPattern, RegexOptions.IgnoreCase | RegexOptions.Multiline);
-        //    html = cssRegex.Replace(html, m => cssRegex.Replace(m.Value, "@import url(" + ("~/" + m.Groups["url"].Value).ToAbsoluteUrl() + ")"));
-
-        //    return html;
-        //}
-
-        //private static string ToAbsoluteUrl(this string relativeUrl)
-        //{
-        //    if (string.IsNullOrEmpty(relativeUrl))
-        //        return relativeUrl;
-
-        //    if (HttpContext.Current == null)
-        //        return relativeUrl;
-
-        //    if (relativeUrl.StartsWith("/"))
-        //        relativeUrl = relativeUrl.Insert(0, "~");
-        //    if (!relativeUrl.StartsWith("~/"))
-        //        relativeUrl = relativeUrl.Insert(0, "~/");
-
-        //    var url = HttpContext.Current.Request.Url;
-        //    var port = url.Port != 80 ? (":" + url.Port) : String.Empty;
-
-        //    return string.Format("{0}://{1}{2}{3}", url.Scheme, url.Host, port, VirtualPathUtility.ToAbsolute(relativeUrl));
-        //}
+        }        
 
         /// <summary>
         /// 
@@ -198,44 +92,44 @@ namespace Connector
             return host;
         }
 
-        public static string HtmlAppRelativeUrlsToAbsoluteUrls(this string html)
-        {
-            if (string.IsNullOrEmpty(html))
-                return html;
+        //public static string HtmlAppRelativeUrlsToAbsoluteUrls(this string html)
+        //{
+        //    if (string.IsNullOrEmpty(html))
+        //        return html;
 
-            const string htmlPattern = "(?<attrib>\\shref|\\ssrc|\\sbackground)\\s*?=\\s*?"
-                                      + "(?<delim1>[\"'\\\\]{0,2})(?!#|http|ftp|mailto|javascript)"
-                                      + "/(?<url>[^\"'>\\\\]+)(?<delim2>[\"'\\\\]{0,2})";
+        //    const string htmlPattern = "(?<attrib>\\shref|\\ssrc|\\sbackground)\\s*?=\\s*?"
+        //                              + "(?<delim1>[\"'\\\\]{0,2})(?!#|http|ftp|mailto|javascript)"
+        //                              + "/(?<url>[^\"'>\\\\]+)(?<delim2>[\"'\\\\]{0,2})";
 
-            var htmlRegex = new Regex(htmlPattern, RegexOptions.IgnoreCase | RegexOptions.Multiline);
-            html = htmlRegex.Replace(html, m => htmlRegex.Replace(m.Value, "${attrib}=${delim1}" + ("~/" + m.Groups["url"].Value).ToAbsoluteUrl() + "${delim2}"));
+        //    var htmlRegex = new Regex(htmlPattern, RegexOptions.IgnoreCase | RegexOptions.Multiline);
+        //    html = htmlRegex.Replace(html, m => htmlRegex.Replace(m.Value, "${attrib}=${delim1}" + ("~/" + m.Groups["url"].Value).ToAbsoluteUrl() + "${delim2}"));
 
-            const string cssPattern = "@import\\s+?(url)*['\"(]{1,2}"
-                                      + "(?!http)\\s*/(?<url>[^\"')]+)['\")]{1,2}";
+        //    const string cssPattern = "@import\\s+?(url)*['\"(]{1,2}"
+        //                              + "(?!http)\\s*/(?<url>[^\"')]+)['\")]{1,2}";
 
-            var cssRegex = new Regex(cssPattern, RegexOptions.IgnoreCase | RegexOptions.Multiline);
-            html = cssRegex.Replace(html, m => cssRegex.Replace(m.Value, "@import url(" + ("~/" + m.Groups["url"].Value).ToAbsoluteUrl() + ")"));
+        //    var cssRegex = new Regex(cssPattern, RegexOptions.IgnoreCase | RegexOptions.Multiline);
+        //    html = cssRegex.Replace(html, m => cssRegex.Replace(m.Value, "@import url(" + ("~/" + m.Groups["url"].Value).ToAbsoluteUrl() + ")"));
 
-            return html;
-        }
+        //    return html;
+        //}
 
-        public static string ToAbsoluteUrl(this string relativeUrl)
-        {
-            if (string.IsNullOrEmpty(relativeUrl))
-                return relativeUrl;
+        //public static string ToAbsoluteUrl(this string relativeUrl)
+        //{
+        //    if (string.IsNullOrEmpty(relativeUrl))
+        //        return relativeUrl;
 
-            if (HttpContext.Current == null)
-                return relativeUrl;
+        //    if (HttpContext.Current == null)
+        //        return relativeUrl;
 
-            if (relativeUrl.StartsWith("/"))
-                relativeUrl = relativeUrl.Insert(0, "~");
-            if (!relativeUrl.StartsWith("~/"))
-                relativeUrl = relativeUrl.Insert(0, "~/");
+        //    if (relativeUrl.StartsWith("/"))
+        //        relativeUrl = relativeUrl.Insert(0, "~");
+        //    if (!relativeUrl.StartsWith("~/"))
+        //        relativeUrl = relativeUrl.Insert(0, "~/");
 
-            var url = HttpContext.Current.Request.Url;
-            var port = url.Port != 80 ? (":" + url.Port) : String.Empty;
+        //    var url = HttpContext.Current.Request.Url;
+        //    var port = url.Port != DEFAULT_PORT ? (":" + url.Port) : String.Empty;
 
-            return string.Format("{0}://{1}{2}{3}", url.Scheme, url.Host, port, VirtualPathUtility.ToAbsolute(relativeUrl));
-        }
+        //    return string.Format("{0}://{1}{2}{3}", url.Scheme, url.Host, port, VirtualPathUtility.ToAbsolute(relativeUrl));
+        //}
     }
 }

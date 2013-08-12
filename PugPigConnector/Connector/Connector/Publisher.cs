@@ -12,6 +12,7 @@ using Connector.Models.Pages;
 using Connector;
 using System.Web;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Connector
 {
@@ -22,15 +23,10 @@ namespace Connector
         private PageData currentPage;
         private PageData editionListPage;
         private HttpRequest request;
-
+        private string fileTypesToCache = string.Empty;
+        private List<string> manifestEntries;
+        
         #endregion
-
-        /// <summary>
-        /// Defines the file types that should be included in the Manifest file when it is
-        /// created.
-        /// All other file types are excluded.
-        /// </summary>
-        const string FILE_TYPES = "*.js;*.css;*.gif;*.png;*.jp*g;*.ico";
 
         #region Public Methods
 
@@ -38,7 +34,10 @@ namespace Connector
         {            
             currentPage = ((PageBase)HttpContext.Current.Handler).CurrentPage;
             editionListPage = DataFactory.Instance.GetPage(currentPage.ParentLink);
-            request = HttpContext.Current.Request;            
+            request = HttpContext.Current.Request;
+            fileTypesToCache = Common.GetConfigSettingValue("FileTypesToCache");
+
+            manifestEntries = new List<string>();
         }
 
         public void PublishEdition()
@@ -55,7 +54,7 @@ namespace Connector
         public void GenerateEditionPages()
         {
             // Ensure there exists a location to publish the edition
-            string publishLocation = Common.GetEditionFolder(currentPage.Name);
+            string publishLocation = Common.GetEditionFolder(currentPage.Name);            
 
             if (!string.IsNullOrEmpty(publishLocation))
             {
@@ -195,7 +194,7 @@ namespace Connector
 
         #region Private Methods
 
-        private static string GetPageContent(string url)
+        private string GetPageContent(string url)
         {
             string result = "";
 
@@ -206,10 +205,66 @@ namespace Connector
                 result = sr.ReadToEnd();
                 sr.Close();
 
-                return Common.HtmlAppRelativeUrlsToAbsoluteUrls(result);
+                //return Common.HtmlAppRelativeUrlsToAbsoluteUrls(result);
+                return ConvertUrls(result);                
             }
 
             return result;
+        }
+
+        private string ConvertUrls(string html)
+        {
+            if (string.IsNullOrEmpty(html))
+                return html;
+
+            const string htmlPattern = "(?<attrib>\\shref|\\ssrc|\\sbackground)\\s*?=\\s*?"
+                                      + "(?<delim1>[\"'\\\\]{0,2})(?!#|http|ftp|mailto|javascript)"
+                                      + "/(?<url>[^\"'>\\\\]+)(?<delim2>[\"'\\\\]{0,2})";
+
+            var htmlRegex = new Regex(htmlPattern, RegexOptions.IgnoreCase | RegexOptions.Multiline);
+            html = htmlRegex.Replace(html, m => htmlRegex.Replace(m.Value, "${attrib}=${delim1}" + ToAbsolute("~/" + m.Groups["url"].Value) + "${delim2}"));
+
+            const string cssPattern = "@import\\s+?(url)*['\"(]{1,2}"
+                                      + "(?!http)\\s*/(?<url>[^\"')]+)['\")]{1,2}";
+
+            var cssRegex = new Regex(cssPattern, RegexOptions.IgnoreCase | RegexOptions.Multiline);
+            html = cssRegex.Replace(html, m => cssRegex.Replace(m.Value, "@import url(" + ToAbsolute("~/" + m.Groups["url"].Value) + ")"));
+
+            return html;
+        }
+
+        public string ToAbsolute(string relativeUrl)
+        {
+            if (string.IsNullOrEmpty(relativeUrl))
+                return relativeUrl;
+
+            if (HttpContext.Current == null)
+                return relativeUrl;
+
+            if (relativeUrl.StartsWith("/"))
+                relativeUrl = relativeUrl.Insert(0, "~");
+            if (!relativeUrl.StartsWith("~/"))
+                relativeUrl = relativeUrl.Insert(0, "~/");
+
+            var url = HttpContext.Current.Request.Url;
+            var port = url.Port != 80 ? (":" + url.Port) : String.Empty;
+
+            string assetUrl = string.Format("{0}://{1}{2}{3}", url.Scheme, url.Host, port, VirtualPathUtility.ToAbsolute(relativeUrl));
+
+            if (relativeUrl.Contains("."))
+                // Create entries to cache
+                manifestEntries.Add(assetUrl);
+            else
+                assetUrl = GetPageName(assetUrl);
+
+            return assetUrl;
+        }
+
+        private string GetPageName(string url)
+        {
+            int pos = url.LastIndexOf("/") + 1;
+
+            return url.Substring(pos) + ".html";
         }
 
         private void ApplyEditionTransform(string feedXml)
@@ -229,25 +284,7 @@ namespace Connector
 
             xmlDocument.LoadXml(stringWriter.ToString());
             xmlDocument.Save(Common.GetEditionFolder(currentPage.Name) + "\\" + currentPage.Name + ".xml");
-        }
-
-        //private List<PageData> GetAllChildrenFilteredByPageType(PageData parent)
-        //{
-        //    List<PageData> allChildren = new List<PageData>();
-
-        //    PageDataCollection children = DataFactory.Instance.GetChildren(parent.PageLink);
-
-        //    foreach (PageData child in children)
-        //    {
-        //        allChildren.Add(child);
-
-        //        if (DataFactory.Instance.GetChildren(child.PageLink).Count > 0)
-        //        {
-        //            allChildren.AddRange(GetAllChildrenFilteredByPageType(child));
-        //        }
-        //    }
-        //    return allChildren;
-        //}               
+        }        
 
         /// <summary>
         /// Creates a list of properties from all pages within an edition
@@ -257,27 +294,17 @@ namespace Connector
         private string ListPageContent()
         {
             var stringBuilder = new StringBuilder();
-            var editionPages = DataFactory.Instance.GetChildren(currentPage.PageLink);
+
+            List<string> distinctManifestEntries = new List<string>();
+            distinctManifestEntries.AddRange(manifestEntries.Distinct());
 
             stringBuilder.Append("# Page Content");
             stringBuilder.AppendLine();
 
-            if (editionPages != null)
+            foreach (string manifestEntry in distinctManifestEntries)
             {
-                foreach (PageData editionPage in editionPages)
-                {
-                    foreach (PropertyData property in from property in editionPage.Property
-                                                      let type = property.Name
-                                                      where type == "Image"
-                                                      select property)
-                    {
-                        if (property.Value != null)
-                        {
-                            stringBuilder.Append(UriSupport.AbsoluteUrlBySettings(property.Value.ToString()));
-                            stringBuilder.AppendLine();
-                        }
-                    }
-                }
+                stringBuilder.Append(manifestEntry);
+                stringBuilder.AppendLine();
             }
 
             return stringBuilder.ToString();
@@ -294,7 +321,7 @@ namespace Connector
             stringBuilder.Append("# Site Content");
             stringBuilder.AppendLine();
 
-            string[] filePatterns = FILE_TYPES.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
+            string[] filePatterns = fileTypesToCache.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
             List<string> cacheFileList = new List<string>();
 
             foreach (string filePattern in filePatterns)

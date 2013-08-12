@@ -109,6 +109,14 @@
     <Compile Include="Common.cs" />
     <Compile Include="Models\Blocks\ContentBlock.cs" />
     <Compile Include="Models\Pages\NovartisContentPage.cs" />
+    <Compile Include="Models\Pages\NovartisContentsPage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Pages\NovartisNoMainImage.cs" />
+    <Compile Include="Models\Pages\NovartisScrollingHeroSideBar.cs" />
+    <Compile Include="Models\Pages\NovartisScrollingLargeImage.cs" />
+    <Compile Include="Models\Pages\NovartisSegmentedColumned.cs" />
+    <Compile Include="Models\Pages\NovartisStartPage.cs" />
     <Compile Include="Publisher.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -160,6 +168,48 @@
     <Compile Include="Views\Pages\NovartisContentPageTemplate.aspx.designer.cs">
       <DependentUpon>NovartisContentPageTemplate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Pages\NovartisContentsPageTemplate.aspx.cs">
+      <DependentUpon>NovartisContentsPageTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\NovartisContentsPageTemplate.aspx.designer.cs">
+      <DependentUpon>NovartisContentsPageTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\NovartisNoMainImageTemplate.aspx.cs">
+      <DependentUpon>NovartisNoMainImageTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\NovartisNoMainImageTemplate.aspx.designer.cs">
+      <DependentUpon>NovartisNoMainImageTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\NovartisScrollingHeroSideBarTemplate.aspx.cs">
+      <DependentUpon>NovartisScrollingHeroSideBarTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\NovartisScrollingHeroSideBarTemplate.aspx.designer.cs">
+      <DependentUpon>NovartisScrollingHeroSideBarTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\NovartisScrollingLargeImageTemplate.aspx.cs">
+      <DependentUpon>NovartisScrollingLargeImageTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\NovartisScrollingLargeImageTemplate.aspx.designer.cs">
+      <DependentUpon>NovartisScrollingLargeImageTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\NovartisSegmentedColumnedTemplate.aspx.cs">
+      <DependentUpon>NovartisSegmentedColumnedTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\NovartisSegmentedColumnedTemplate.aspx.designer.cs">
+      <DependentUpon>NovartisSegmentedColumnedTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\NovartisStartPageTemplate.aspx.cs">
+      <DependentUpon>NovartisStartPageTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Pages\NovartisStartPageTemplate.aspx.designer.cs">
+      <DependentUpon>NovartisStartPageTemplate.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\" />
@@ -176,6 +226,12 @@
     <Content Include="Views\Pages\EditionContainer.aspx" />
     <Content Include="Views\Pages\GenericPageTemplate.aspx" />
     <Content Include="Views\Pages\NovartisContentPageTemplate.aspx" />
+    <Content Include="Views\Pages\NovartisContentsPageTemplate.aspx" />
+    <Content Include="Views\Pages\NovartisNoMainImageTemplate.aspx" />
+    <Content Include="Views\Pages\NovartisScrollingHeroSideBarTemplate.aspx" />
+    <Content Include="Views\Pages\NovartisScrollingLargeImageTemplate.aspx" />
+    <Content Include="Views\Pages\NovartisSegmentedColumnedTemplate.aspx" />
+    <Content Include="Views\Pages\NovartisStartPageTemplate.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

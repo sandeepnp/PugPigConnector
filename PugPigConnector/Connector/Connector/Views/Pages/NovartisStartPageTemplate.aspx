@@ -1,7 +1,7 @@
-﻿<%@ Page Language="c#" Inherits="PugPigConnector.Views.Pages.NovartisStartPageTemplate" CodeBehind="NovartisStartPageTemplate.aspx.cs" %>
+﻿<%@ Page Language="c#" Inherits="Connector.Views.Pages.NovartisStartPageTemplate" CodeBehind="NovartisStartPageTemplate.aspx.cs" %>
 
 <!DOCTYPE html>
-<html manifest="/page.manifest?pageId=<%= CurrentPage.PageLink %>">
+<html>
     <head id="Head1" runat="server">
         <title>Hero Sidebar</title>
         <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />

@@ -1,7 +1,7 @@
-﻿<%@ Page Language="c#" Inherits="PugPigConnector.Views.Pages.NovartisContentsPageTemplate" CodeBehind="NovartisContentsPageTemplate.aspx.cs" %>
+﻿<%@ Page Language="c#" Inherits="Connector.Views.Pages.NovartisContentsPageTemplate" CodeBehind="NovartisContentsPageTemplate.aspx.cs" %>
 
 <!DOCTYPE html>
-<html manifest="/page.manifest?pageId=<%= CurrentPage.PageLink %>">
+<html>
     <head id="Head1" runat="server">
         <title>Hero Sidebar</title>
         <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
@@ -121,7 +121,7 @@
     </a>
   </section>
     <section class="travel">
-    <a href="scrolling-hero.html">
+    <a href="/New-Edition-List/Novartis/Scrolling-Large-Image">
       <img src="/img/gal3.jpg">
       <p class="cat">Medical News</p>
       <h1>Tourism: The Girls girls' new TV tour</h1>

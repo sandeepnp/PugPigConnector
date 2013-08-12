@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PugPigConnector.Views.Pages {
+namespace Connector.Views.Pages {
     
     
     public partial class NovartisStartPageTemplate {

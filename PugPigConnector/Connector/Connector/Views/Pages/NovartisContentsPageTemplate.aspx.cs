@@ -10,9 +10,9 @@ using EPiServer.DataAbstraction;
 using EPiServer.Framework.DataAnnotations;
 using EPiServer.Web;
 using EPiServer.Web.WebControls;
-using PugPigConnector.Models.Pages;
+using Connector.Models.Pages;
 
-namespace PugPigConnector.Views.Pages
+namespace Connector.Views.Pages
 {
     [TemplateDescriptor(Path = "~/Views/Pages/NovartisContentsPageTemplate.aspx")]
     public partial class NovartisContentsPageTemplate : TemplatePage<NovartisContentsPage>
