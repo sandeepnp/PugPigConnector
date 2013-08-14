@@ -16,7 +16,7 @@ using System.Text.RegularExpressions;
 
 namespace Connector
 {
-    public class Publisher
+    public class Publisher: IPublisher
     {
         #region Instance Variables
 
@@ -51,7 +51,9 @@ namespace Connector
             GenerateEditionListFeed();
         }
 
-        public void GenerateEditionPages()
+        #endregion
+
+        private void GenerateEditionPages()
         {
             // Ensure there exists a location to publish the edition
             string publishLocation = Common.GetEditionFolder(currentPage.Name);            
@@ -78,7 +80,7 @@ namespace Connector
             }
         }
 
-        public void GenerateEditionFeed()
+        private void GenerateEditionFeed()
         {
             XmlDocument doc = new XmlDocument();
 
@@ -150,7 +152,7 @@ namespace Connector
             ApplyEditionTransform(doc.InnerXml);
         }
 
-        public void GenerateManifest()
+        private void GenerateManifest()
         {
             var stringBuilder = new StringBuilder();
             stringBuilder.Append("CACHE MANIFEST");
@@ -178,7 +180,7 @@ namespace Connector
             }
         }
 
-        public void GenerateEditionListFeed()
+        private void GenerateEditionListFeed()
         {
             PageDataCollection editions;
 
@@ -189,9 +191,7 @@ namespace Connector
                 ProcessEditionListFeed(editions);
             }
         }
-
-        #endregion
-
+        
         #region Private Methods
 
         private string GetPageContent(string url)

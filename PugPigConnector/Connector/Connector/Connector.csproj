@@ -107,6 +107,7 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
     <Compile Include="Common.cs" />
+    <Compile Include="IPublisher.cs" />
     <Compile Include="Models\Blocks\ContentBlock.cs" />
     <Compile Include="Models\Pages\NovartisContentPage.cs" />
     <Compile Include="Models\Pages\NovartisContentsPage.cs">

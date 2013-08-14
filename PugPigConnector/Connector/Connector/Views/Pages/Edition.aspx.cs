@@ -47,7 +47,7 @@ namespace Connector.Views.Pages
 
         private void Publish()
         {
-            var publisher = new Publisher();
+            IPublisher publisher = new Publisher();
 
             publisher.PublishEdition();
         }
