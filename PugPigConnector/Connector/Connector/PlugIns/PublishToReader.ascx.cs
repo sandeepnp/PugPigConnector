@@ -53,9 +53,28 @@ namespace Connector.PlugIns
 
         protected void publishButton_Click(object sender, EventArgs e)
         {
-            //Common.Publish();
+            try
+            {
+                Publish();
+
+                publishLabel.Text = "This edition has been successfully published!";
+            }
+            catch (Exception ex)
+            {
+                publishLabel.Text = "Sorry. This edition could not be published!";
+            }
+            finally
+            {
+                publishLabel.Visible = true;
+                publishButton.Enabled = false;
+            }     
         }
 
+        private void Publish()
+        {
+            IPublisher publisher = new Publisher();
 
+            publisher.PublishEdition();
+        }
     }
 }

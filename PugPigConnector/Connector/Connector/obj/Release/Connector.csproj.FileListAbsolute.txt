@@ -1,0 +1,13 @@
+C:\EPiServer\Sites\Connector\Connector\bin\Connector.dll
+C:\EPiServer\Sites\Connector\Connector\bin\Connector.pdb
+C:\EPiServer\Sites\Connector\Connector\bin\EPiServer.BaseLibrary.dll
+C:\EPiServer\Sites\Connector\Connector\bin\EPiServer.Configuration.dll
+C:\EPiServer\Sites\Connector\Connector\bin\EPiServer.Data.dll
+C:\EPiServer\Sites\Connector\Connector\bin\EPiServer.dll
+C:\EPiServer\Sites\Connector\Connector\bin\EPiServer.Framework.dll
+C:\EPiServer\Sites\Connector\Connector\bin\EPiServer.Web.WebControls.dll
+C:\EPiServer\Sites\Connector\Connector\bin\EPiServer.XForms.dll
+C:\EPiServer\Sites\Connector\Connector\bin\log4net.dll
+C:\EPiServer\Sites\Connector\Connector\obj\Release\Connector.csprojResolveAssemblyReference.cache
+C:\EPiServer\Sites\Connector\Connector\obj\Release\Connector.dll
+C:\EPiServer\Sites\Connector\Connector\obj\Release\Connector.pdb

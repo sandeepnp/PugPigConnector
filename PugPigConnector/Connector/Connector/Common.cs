@@ -75,13 +75,13 @@ namespace Connector
 
             if (Directory.Exists(HttpContext.Current.Server.MapPath("~") + "\\" + publishLocation))
             {
-                host = string.Format("{0}/{1}", GetSiteRoot(), publishLocation);;
+                host = string.Format("{0}/{1}", GetSiteRoot(), publishLocation);
             }            
 
             return host;
         }
 
-        private static string GetSiteRoot()
+        public static string GetSiteRoot()
         {
             string host = string.Empty;
             var url = HttpContext.Current.Request.Url;

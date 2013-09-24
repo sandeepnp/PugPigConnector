@@ -13,6 +13,8 @@ using Connector;
 using System.Web;
 using System.Linq;
 using System.Text.RegularExpressions;
+using EPiServer.DataAbstraction;
+using EPiServer.Globalization;
 
 namespace Connector
 {
@@ -25,7 +27,9 @@ namespace Connector
         private HttpRequest request;
         private string fileTypesToCache = string.Empty;
         private List<string> manifestEntries;
-        
+        private string languageId;
+        private string siteRoot;
+
         #endregion
 
         #region Public Methods
@@ -36,6 +40,8 @@ namespace Connector
             editionListPage = DataFactory.Instance.GetPage(currentPage.ParentLink);
             request = HttpContext.Current.Request;
             fileTypesToCache = Common.GetConfigSettingValue("FileTypesToCache");
+            languageId = LanguageBranch.Load(ContentLanguage.PreferredCulture).LanguageID;
+            siteRoot = Common.GetSiteRoot();
 
             manifestEntries = new List<string>();
         }
@@ -66,7 +72,7 @@ namespace Connector
                 {
                     foreach (PageData editionPage in editionPages)
                     {
-                        string pageURL = Common.GetFriendlyURL(editionPage);
+                        string pageURL = GetFriendlyURL(editionPage.URLSegment);
 
                         string pageContent = GetPageContent(pageURL);
 
@@ -439,6 +445,11 @@ namespace Connector
 
             xmlDocument.LoadXml(stringWriter.ToString());
             xmlDocument.Save(Common.GetEditionFolder(string.Empty) + "\\" + editionListPage.Name + ".xml");
+        }
+
+        private string GetFriendlyURL(string pageURLSegment)
+        {
+            return string.Format("{0}/{1}/{2}/{3}/{4}/", siteRoot, languageId, editionListPage.URLSegment, currentPage.URLSegment, pageURLSegment);
         }
 
         #endregion

@@ -13,12 +13,21 @@ namespace Connector.PlugIns {
     public partial class PublishToReader {
         
         /// <summary>
-        /// searchButton control.
+        /// publishButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button searchButton;
+        protected global::System.Web.UI.WebControls.Button publishButton;
+        
+        /// <summary>
+        /// publishLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label publishLabel;
     }
 }
